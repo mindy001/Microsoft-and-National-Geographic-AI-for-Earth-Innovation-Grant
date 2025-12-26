@@ -1,0 +1,443 @@
+Epoch 1/50
+
+Epoch 00001: LearningRateScheduler reducing learning rate to 0.0003.
+2021-06-16 22:51:37.767751: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2021-06-16 22:51:38.460805: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8004
+2021-06-16 22:51:39.309266: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2021-06-16 22:51:39.790961: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+  1/318 [..............................] - ETA: 1:23:41 - loss: 95324.2969 - mean_io_u: 0.16112021-06-16 22:51:48.769175: I tensorflow/core/profiler/lib/profiler_session.cc:126] Profiler session initializing.
+2021-06-16 22:51:48.769224: I tensorflow/core/profiler/lib/profiler_session.cc:141] Profiler session started.
+  2/318 [..............................] - ETA: 4:23 - loss: 214264.7031 - mean_io_u: 0.2060  2021-06-16 22:51:49.477460: I tensorflow/core/profiler/lib/profiler_session.cc:66] Profiler session collecting data.
+2021-06-16 22:51:49.478610: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1743] CUPTI activity buffer flushed
+2021-06-16 22:51:49.660898: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:673]  GpuTracer has collected 1662 callback api events and 1659 activity events. 
+2021-06-16 22:51:49.691811: I tensorflow/core/profiler/lib/profiler_session.cc:159] Profiler session tear down.
+2021-06-16 22:51:49.730368: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: /content/checkpoints/logs/train/plugins/profile/2021_06_16_22_51_49
+2021-06-16 22:51:49.761528: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to /content/checkpoints/logs/train/plugins/profile/2021_06_16_22_51_49/e1f545ffaaa6.trace.json.gz
+2021-06-16 22:51:49.815139: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: /content/checkpoints/logs/train/plugins/profile/2021_06_16_22_51_49
+2021-06-16 22:51:49.821084: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to /content/checkpoints/logs/train/plugins/profile/2021_06_16_22_51_49/e1f545ffaaa6.memory_profile.json.gz
+2021-06-16 22:51:49.823577: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: /content/checkpoints/logs/train/plugins/profile/2021_06_16_22_51_49Dumped tool data for xplane.pb to /content/checkpoints/logs/train/plugins/profile/2021_06_16_22_51_49/e1f545ffaaa6.xplane.pb
+Dumped tool data for overview_page.pb to /content/checkpoints/logs/train/plugins/profile/2021_06_16_22_51_49/e1f545ffaaa6.overview_page.pb
+Dumped tool data for input_pipeline.pb to /content/checkpoints/logs/train/plugins/profile/2021_06_16_22_51_49/e1f545ffaaa6.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to /content/checkpoints/logs/train/plugins/profile/2021_06_16_22_51_49/e1f545ffaaa6.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to /content/checkpoints/logs/train/plugins/profile/2021_06_16_22_51_49/e1f545ffaaa6.kernel_stats.pb
+
+318/318 [==============================] - 96s 252ms/step - loss: 32412.0059 - mean_io_u: 0.5699 - val_loss: 46427.0938 - val_mean_io_u: 0.4641
+Epoch 2/50
+
+Epoch 00002: LearningRateScheduler reducing learning rate to 0.00029970410792781927.
+318/318 [==============================] - 73s 229ms/step - loss: 17486.5391 - mean_io_u: 0.7308 - val_loss: 46873.3633 - val_mean_io_u: 0.4865
+Epoch 3/50
+
+Epoch 00003: LearningRateScheduler reducing learning rate to 0.0002988175994621059.
+318/318 [==============================] - 74s 233ms/step - loss: 16054.2998 - mean_io_u: 0.7461 - val_loss: 105140.0859 - val_mean_io_u: 0.3525
+Epoch 4/50
+
+Epoch 00004: LearningRateScheduler reducing learning rate to 0.00029734397324676686.
+318/318 [==============================] - 73s 228ms/step - loss: 13546.0254 - mean_io_u: 0.7795 - val_loss: 14154.4609 - val_mean_io_u: 0.6955
+Epoch 5/50
+
+Epoch 00005: LearningRateScheduler reducing learning rate to 0.0002952890450112382.
+318/318 [==============================] - 75s 234ms/step - loss: 11801.0400 - mean_io_u: 0.8029 - val_loss: 10743.0312 - val_mean_io_u: 0.7729
+Epoch 6/50
+
+Epoch 00006: LearningRateScheduler reducing learning rate to 0.0002926609246184583.
+318/318 [==============================] - 73s 229ms/step - loss: 12338.8135 - mean_io_u: 0.7971 - val_loss: 12282.5781 - val_mean_io_u: 0.8316
+Epoch 7/50
+
+Epoch 00007: LearningRateScheduler reducing learning rate to 0.00028946998405894326.
+318/318 [==============================] - 73s 230ms/step - loss: 11338.9336 - mean_io_u: 0.8085 - val_loss: 9037.4033 - val_mean_io_u: 0.7951
+Epoch 8/50
+
+Epoch 00008: LearningRateScheduler reducing learning rate to 0.00028572881651727964.
+318/318 [==============================] - 73s 229ms/step - loss: 11010.7373 - mean_io_u: 0.8210 - val_loss: 10737.9248 - val_mean_io_u: 0.7983
+Epoch 9/50
+
+Epoch 00009: LearningRateScheduler reducing learning rate to 0.0002814521866725773.
+318/318 [==============================] - 73s 230ms/step - loss: 9972.1543 - mean_io_u: 0.8327 - val_loss: 8945.6328 - val_mean_io_u: 0.8301
+Epoch 10/50
+
+Epoch 00010: LearningRateScheduler reducing learning rate to 0.00027665697242902713.
+318/318 [==============================] - 73s 230ms/step - loss: 10284.4385 - mean_io_u: 0.8290 - val_loss: 13611.3799 - val_mean_io_u: 0.7526
+Epoch 11/50
+
+Epoch 00011: LearningRateScheduler reducing learning rate to 0.00027136209830652333.
+318/318 [==============================] - 74s 231ms/step - loss: 10849.9004 - mean_io_u: 0.8264 - val_loss: 13063.2383 - val_mean_io_u: 0.7873
+Epoch 12/50
+
+Epoch 00012: LearningRateScheduler reducing learning rate to 0.00026558846075422956.
+318/318 [==============================] - 72s 227ms/step - loss: 9039.2510 - mean_io_u: 0.8461 - val_loss: 13409.8105 - val_mean_io_u: 0.7607
+Epoch 13/50
+
+Epoch 00013: LearningRateScheduler reducing learning rate to 0.00025935884568184064.
+318/318 [==============================] - 72s 227ms/step - loss: 8949.0859 - mean_io_u: 0.8507 - val_loss: 10349.4785 - val_mean_io_u: 0.8027
+Epoch 14/50
+
+Epoch 00014: LearningRateScheduler reducing learning rate to 0.00025269783853400685.
+318/318 [==============================] - 72s 228ms/step - loss: 9034.5469 - mean_io_u: 0.8486 - val_loss: 16892.0508 - val_mean_io_u: 0.5598
+Epoch 15/50
+
+Epoch 00015: LearningRateScheduler reducing learning rate to 0.000245631727262816.
+318/318 [==============================] - 72s 227ms/step - loss: 9352.9189 - mean_io_u: 0.8414 - val_loss: 11285.9258 - val_mean_io_u: 0.8187
+Epoch 16/50
+
+Epoch 00016: LearningRateScheduler reducing learning rate to 0.00023818839858125637.
+318/318 [==============================] - 72s 228ms/step - loss: 8870.7393 - mean_io_u: 0.8499 - val_loss: 10970.1426 - val_mean_io_u: 0.7759
+Epoch 17/50
+
+Epoch 00017: LearningRateScheduler reducing learning rate to 0.00023039722790710052.
+318/318 [==============================] - 73s 229ms/step - loss: 9693.8633 - mean_io_u: 0.8411 - val_loss: 18350.8945 - val_mean_io_u: 0.6771
+Epoch 18/50
+
+Epoch 00018: LearningRateScheduler reducing learning rate to 0.00022228896343155218.
+318/318 [==============================] - 73s 228ms/step - loss: 8856.9395 - mean_io_u: 0.8548 - val_loss: 12305.0293 - val_mean_io_u: 0.7383
+Epoch 19/50
+
+Epoch 00019: LearningRateScheduler reducing learning rate to 0.00021389560477018263.
+318/318 [==============================] - 72s 227ms/step - loss: 9268.2412 - mean_io_u: 0.8520 - val_loss: 12380.0312 - val_mean_io_u: 0.7330
+Epoch 20/50
+
+Epoch 00020: LearningRateScheduler reducing learning rate to 0.00020525027667506746.
+318/318 [==============================] - 72s 225ms/step - loss: 8298.4258 - mean_io_u: 0.8627 - val_loss: 12174.9219 - val_mean_io_u: 0.7622
+Epoch 21/50
+
+Epoch 00021: LearningRateScheduler reducing learning rate to 0.00019638709830652336.
+318/318 [==============================] - 73s 228ms/step - loss: 8005.0835 - mean_io_u: 0.8646 - val_loss: 9603.0996 - val_mean_io_u: 0.8279
+Epoch 22/50
+
+Epoch 00022: LearningRateScheduler reducing learning rate to 0.00018734104858036995.
+318/318 [==============================] - 72s 225ms/step - loss: 8178.2915 - mean_io_u: 0.8598 - val_loss: 12484.8359 - val_mean_io_u: 0.7456
+Epoch 23/50
+
+Epoch 00023: LearningRateScheduler reducing learning rate to 0.0001781478281221294.
+318/318 [==============================] - 72s 225ms/step - loss: 7767.0259 - mean_io_u: 0.8675 - val_loss: 7477.1807 - val_mean_io_u: 0.8139
+Epoch 24/50
+
+Epoch 00024: LearningRateScheduler reducing learning rate to 0.00016884371837296743.
+318/318 [==============================] - 72s 226ms/step - loss: 7622.7334 - mean_io_u: 0.8695 - val_loss: 18868.0449 - val_mean_io_u: 0.6871
+Epoch 25/50
+
+Epoch 00025: LearningRateScheduler reducing learning rate to 0.00015946543840342055.
+318/318 [==============================] - 72s 227ms/step - loss: 8430.0381 - mean_io_u: 0.8581 - val_loss: 19343.6152 - val_mean_io_u: 0.6036
+Epoch 26/50
+
+Epoch 00026: LearningRateScheduler reducing learning rate to 0.00015005.
+318/318 [==============================] - 72s 226ms/step - loss: 7949.1021 - mean_io_u: 0.8640 - val_loss: 9747.7070 - val_mean_io_u: 0.8184
+Epoch 27/50
+
+Epoch 00027: LearningRateScheduler reducing learning rate to 0.00014063456159657946.
+318/318 [==============================] - 72s 226ms/step - loss: 7654.5708 - mean_io_u: 0.8676 - val_loss: 9109.1631 - val_mean_io_u: 0.8257
+Epoch 28/50
+
+Epoch 00028: LearningRateScheduler reducing learning rate to 0.00013125628162703257.
+318/318 [==============================] - 72s 225ms/step - loss: 8323.2109 - mean_io_u: 0.8554 - val_loss: 10891.3574 - val_mean_io_u: 0.8118
+Epoch 29/50
+
+Epoch 00029: LearningRateScheduler reducing learning rate to 0.00012195217187787059.
+318/318 [==============================] - 72s 226ms/step - loss: 7749.8281 - mean_io_u: 0.8686 - val_loss: 9819.5098 - val_mean_io_u: 0.7832
+Epoch 30/50
+
+Epoch 00030: LearningRateScheduler reducing learning rate to 0.00011275895141963.
+318/318 [==============================] - 72s 226ms/step - loss: 7508.6206 - mean_io_u: 0.8718 - val_loss: 11223.8877 - val_mean_io_u: 0.7680
+Epoch 31/50
+
+Epoch 00031: LearningRateScheduler reducing learning rate to 0.00010371290169347667.
+318/318 [==============================] - 72s 226ms/step - loss: 7340.3857 - mean_io_u: 0.8741 - val_loss: 8518.1143 - val_mean_io_u: 0.8319
+Epoch 32/50
+
+Epoch 00032: LearningRateScheduler reducing learning rate to 9.484972332493257e-05.
+318/318 [==============================] - 72s 226ms/step - loss: 7293.8887 - mean_io_u: 0.8747 - val_loss: 8717.9600 - val_mean_io_u: 0.8109
+Epoch 33/50
+
+Epoch 00033: LearningRateScheduler reducing learning rate to 8.620439522981734e-05.
+318/318 [==============================] - 72s 225ms/step - loss: 7164.9536 - mean_io_u: 0.8768 - val_loss: 8196.4053 - val_mean_io_u: 0.8227
+Epoch 34/50
+
+Epoch 00034: LearningRateScheduler reducing learning rate to 7.781103656844776e-05.
+318/318 [==============================] - 72s 228ms/step - loss: 7286.9341 - mean_io_u: 0.8753 - val_loss: 8121.5562 - val_mean_io_u: 0.8495
+Epoch 35/50
+
+Epoch 00035: LearningRateScheduler reducing learning rate to 6.970277209289941e-05.
+318/318 [==============================] - 72s 226ms/step - loss: 7688.9653 - mean_io_u: 0.8696 - val_loss: 8907.0088 - val_mean_io_u: 0.8284
+Epoch 36/50
+
+Epoch 00036: LearningRateScheduler reducing learning rate to 6.191160141874366e-05.
+318/318 [==============================] - 72s 225ms/step - loss: 7238.4531 - mean_io_u: 0.8762 - val_loss: 7197.6274 - val_mean_io_u: 0.8598
+Epoch 37/50
+
+Epoch 00037: LearningRateScheduler reducing learning rate to 5.446827273718397e-05.
+318/318 [==============================] - 72s 226ms/step - loss: 7129.2314 - mean_io_u: 0.8777 - val_loss: 7576.0298 - val_mean_io_u: 0.8597
+Epoch 38/50
+
+Epoch 00038: LearningRateScheduler reducing learning rate to 4.740216146599312e-05.
+318/318 [==============================] - 73s 228ms/step - loss: 7116.4316 - mean_io_u: 0.8778 - val_loss: 9433.7588 - val_mean_io_u: 0.8230
+Epoch 39/50
+
+Epoch 00039: LearningRateScheduler reducing learning rate to 4.074115431815937e-05.
+318/318 [==============================] - 72s 226ms/step - loss: 7153.3662 - mean_io_u: 0.8779 - val_loss: 8286.8730 - val_mean_io_u: 0.8487
+Epoch 40/50
+
+Epoch 00040: LearningRateScheduler reducing learning rate to 3.4511539245770414e-05.
+318/318 [==============================] - 72s 226ms/step - loss: 7087.3291 - mean_io_u: 0.8782 - val_loss: 8542.9521 - val_mean_io_u: 0.8410
+Epoch 41/50
+
+Epoch 00041: LearningRateScheduler reducing learning rate to 2.8737901693476642e-05.
+318/318 [==============================] - 72s 226ms/step - loss: 7047.3525 - mean_io_u: 0.8787 - val_loss: 10989.4072 - val_mean_io_u: 0.8086
+Epoch 42/50
+
+Epoch 00042: LearningRateScheduler reducing learning rate to 2.344302757097287e-05.
+318/318 [==============================] - 72s 226ms/step - loss: 7010.2891 - mean_io_u: 0.8794 - val_loss: 6176.2646 - val_mean_io_u: 0.8639
+Epoch 43/50
+
+Epoch 00043: LearningRateScheduler reducing learning rate to 1.8647813327422653e-05.
+318/318 [==============================] - 72s 226ms/step - loss: 7050.6475 - mean_io_u: 0.8791 - val_loss: 9423.4355 - val_mean_io_u: 0.8288
+Epoch 44/50
+
+Epoch 00044: LearningRateScheduler reducing learning rate to 1.4371183482720398e-05.
+318/318 [==============================] - 72s 226ms/step - loss: 7028.0215 - mean_io_u: 0.8792 - val_loss: 8883.4619 - val_mean_io_u: 0.8191
+Epoch 45/50
+
+Epoch 00045: LearningRateScheduler reducing learning rate to 1.063001594105671e-05.
+318/318 [==============================] - 72s 225ms/step - loss: 7004.2261 - mean_io_u: 0.8796 - val_loss: 10364.8535 - val_mean_io_u: 0.7843
+Epoch 46/50
+
+Epoch 00046: LearningRateScheduler reducing learning rate to 7.4390753815417276e-06.
+318/318 [==============================] - 72s 226ms/step - loss: 6984.2598 - mean_io_u: 0.8798 - val_loss: 8966.7373 - val_mean_io_u: 0.7679
+Epoch 47/50
+
+Epoch 00047: LearningRateScheduler reducing learning rate to 4.810954988761786e-06.
+318/318 [==============================] - 72s 226ms/step - loss: 6995.1157 - mean_io_u: 0.8796 - val_loss: 10125.2637 - val_mean_io_u: 0.8336
+Epoch 48/50
+
+Epoch 00048: LearningRateScheduler reducing learning rate to 2.756026753233126e-06.
+318/318 [==============================] - 72s 226ms/step - loss: 6965.0986 - mean_io_u: 0.8801 - val_loss: 8554.5205 - val_mean_io_u: 0.8293
+Epoch 49/50
+
+Epoch 00049: LearningRateScheduler reducing learning rate to 1.2824005378940589e-06.
+318/318 [==============================] - 72s 226ms/step - loss: 6951.2510 - mean_io_u: 0.8801 - val_loss: 9602.5088 - val_mean_io_u: 0.8333
+Epoch 50/50
+
+Epoch 00050: LearningRateScheduler reducing learning rate to 3.958920721806797e-07.
+318/318 [==============================] - 72s 226ms/step - loss: 6985.2964 - mean_io_u: 0.8800 - val_loss: 8050.6689 - val_mean_io_u: 0.8368
+Finished
+
+
+100 epochs 
+
+Epoch 00001: LearningRateScheduler reducing learning rate to 0.0003.
+2021-06-21 19:00:12.686042: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2021-06-21 19:00:14.909745: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8004
+2021-06-21 19:00:39.144808: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2021-06-21 19:00:41.675989: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+  1/318 [..............................] - ETA: 4:18:54 - loss: 5174.1025 - mean_io_u: 0.91102021-06-21 19:00:53.118642: I tensorflow/core/profiler/lib/profiler_session.cc:126] Profiler session initializing.
+2021-06-21 19:00:53.118695: I tensorflow/core/profiler/lib/profiler_session.cc:141] Profiler session started.
+  2/318 [..............................] - ETA: 4:27 - loss: 7679.9229 - mean_io_u: 0.8950   2021-06-21 19:00:53.846102: I tensorflow/core/profiler/lib/profiler_session.cc:66] Profiler session collecting data.
+2021-06-21 19:00:53.847268: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1743] CUPTI activity buffer flushed
+2021-06-21 19:00:54.031691: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:673]  GpuTracer has collected 1681 callback api events and 1678 activity events. 
+2021-06-21 19:00:54.060600: I tensorflow/core/profiler/lib/profiler_session.cc:159] Profiler session tear down.
+2021-06-21 19:00:54.107575: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: /content/checkpoints/logs/train/plugins/profile/2021_06_21_19_00_54
+2021-06-21 19:00:54.134972: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to /content/checkpoints/logs/train/plugins/profile/2021_06_21_19_00_54/cae5bf50c331.trace.json.gz
+2021-06-21 19:00:54.195844: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: /content/checkpoints/logs/train/plugins/profile/2021_06_21_19_00_54
+2021-06-21 19:00:54.202813: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to /content/checkpoints/logs/train/plugins/profile/2021_06_21_19_00_54/cae5bf50c331.memory_profile.json.gz
+2021-06-21 19:00:54.206079: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: /content/checkpoints/logs/train/plugins/profile/2021_06_21_19_00_54Dumped tool data for xplane.pb to /content/checkpoints/logs/train/plugins/profile/2021_06_21_19_00_54/cae5bf50c331.xplane.pb
+Dumped tool data for overview_page.pb to /content/checkpoints/logs/train/plugins/profile/2021_06_21_19_00_54/cae5bf50c331.overview_page.pb
+Dumped tool data for input_pipeline.pb to /content/checkpoints/logs/train/plugins/profile/2021_06_21_19_00_54/cae5bf50c331.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to /content/checkpoints/logs/train/plugins/profile/2021_06_21_19_00_54/cae5bf50c331.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to /content/checkpoints/logs/train/plugins/profile/2021_06_21_19_00_54/cae5bf50c331.kernel_stats.pb
+
+318/318 [==============================] - 541s 2s/step - loss: 9499.1787 - mean_io_u: 0.8364 - val_loss: 25588.9629 - val_mean_io_u: 0.5268
+Epoch 2/50
+
+Epoch 00002: LearningRateScheduler reducing learning rate to 0.00029970410792781927.
+318/318 [==============================] - 78s 246ms/step - loss: 7984.1543 - mean_io_u: 0.8640 - val_loss: 11243.8926 - val_mean_io_u: 0.7643
+Epoch 3/50
+
+Epoch 00003: LearningRateScheduler reducing learning rate to 0.0002988175994621059.
+318/318 [==============================] - 78s 246ms/step - loss: 8985.1562 - mean_io_u: 0.8486 - val_loss: 8989.2559 - val_mean_io_u: 0.7969
+Epoch 4/50
+
+Epoch 00004: LearningRateScheduler reducing learning rate to 0.00029734397324676686.
+318/318 [==============================] - 78s 243ms/step - loss: 7643.8257 - mean_io_u: 0.8701 - val_loss: 11079.4365 - val_mean_io_u: 0.7513
+Epoch 5/50
+
+Epoch 00005: LearningRateScheduler reducing learning rate to 0.0002952890450112382.
+318/318 [==============================] - 77s 243ms/step - loss: 7416.2422 - mean_io_u: 0.8721 - val_loss: 14190.8145 - val_mean_io_u: 0.7236
+Epoch 6/50
+
+Epoch 00006: LearningRateScheduler reducing learning rate to 0.0002926609246184583.
+318/318 [==============================] - 77s 243ms/step - loss: 7310.4722 - mean_io_u: 0.8739 - val_loss: 6962.4634 - val_mean_io_u: 0.8492
+Epoch 7/50
+
+Epoch 00007: LearningRateScheduler reducing learning rate to 0.00028946998405894326.
+318/318 [==============================] - 76s 239ms/step - loss: 8651.8662 - mean_io_u: 0.8557 - val_loss: 18896.7949 - val_mean_io_u: 0.6247
+Epoch 8/50
+
+Epoch 00008: LearningRateScheduler reducing learning rate to 0.00028572881651727964.
+318/318 [==============================] - 75s 237ms/step - loss: 8225.9717 - mean_io_u: 0.8587 - val_loss: 10558.9551 - val_mean_io_u: 0.8297
+Epoch 9/50
+
+Epoch 00009: LearningRateScheduler reducing learning rate to 0.0002814521866725773.
+318/318 [==============================] - 75s 236ms/step - loss: 8790.7920 - mean_io_u: 0.8523 - val_loss: 8658.9590 - val_mean_io_u: 0.7867
+Epoch 10/50
+
+Epoch 00010: LearningRateScheduler reducing learning rate to 0.00027665697242902713.
+318/318 [==============================] - 77s 242ms/step - loss: 7934.2803 - mean_io_u: 0.8632 - val_loss: 25503.5898 - val_mean_io_u: 0.6212
+Epoch 11/50
+
+Epoch 00011: LearningRateScheduler reducing learning rate to 0.00027136209830652333.
+318/318 [==============================] - 75s 237ms/step - loss: 8797.5654 - mean_io_u: 0.8484 - val_loss: 13796.4893 - val_mean_io_u: 0.7632
+Epoch 12/50
+
+Epoch 00012: LearningRateScheduler reducing learning rate to 0.00026558846075422956.
+318/318 [==============================] - 74s 232ms/step - loss: 7625.6421 - mean_io_u: 0.8701 - val_loss: 8181.1494 - val_mean_io_u: 0.8251
+Epoch 13/50
+
+Epoch 00013: LearningRateScheduler reducing learning rate to 0.00025935884568184064.
+318/318 [==============================] - 73s 230ms/step - loss: 7285.6670 - mean_io_u: 0.8748 - val_loss: 9012.3027 - val_mean_io_u: 0.8256
+Epoch 14/50
+
+Epoch 00014: LearningRateScheduler reducing learning rate to 0.00025269783853400685.
+318/318 [==============================] - 73s 230ms/step - loss: 8363.7764 - mean_io_u: 0.8620 - val_loss: 10189.5039 - val_mean_io_u: 0.8102
+Epoch 15/50
+
+Epoch 00015: LearningRateScheduler reducing learning rate to 0.000245631727262816.
+318/318 [==============================] - 74s 232ms/step - loss: 7430.2568 - mean_io_u: 0.8734 - val_loss: 9486.7549 - val_mean_io_u: 0.7893
+Epoch 16/50
+
+Epoch 00016: LearningRateScheduler reducing learning rate to 0.00023818839858125637.
+318/318 [==============================] - 74s 232ms/step - loss: 7981.4902 - mean_io_u: 0.8634 - val_loss: 8589.9824 - val_mean_io_u: 0.8166
+Epoch 17/50
+
+Epoch 00017: LearningRateScheduler reducing learning rate to 0.00023039722790710052.
+318/318 [==============================] - 74s 232ms/step - loss: 7384.8057 - mean_io_u: 0.8733 - val_loss: 11300.2607 - val_mean_io_u: 0.7647
+Epoch 18/50
+
+Epoch 00018: LearningRateScheduler reducing learning rate to 0.00022228896343155218.
+318/318 [==============================] - 74s 231ms/step - loss: 7140.9175 - mean_io_u: 0.8772 - val_loss: 8654.3574 - val_mean_io_u: 0.8249
+Epoch 19/50
+
+Epoch 00019: LearningRateScheduler reducing learning rate to 0.00021389560477018263.
+318/318 [==============================] - 75s 237ms/step - loss: 7074.5225 - mean_io_u: 0.8776 - val_loss: 8136.0479 - val_mean_io_u: 0.8179
+Epoch 20/50
+
+Epoch 00020: LearningRateScheduler reducing learning rate to 0.00020525027667506746.
+318/318 [==============================] - 74s 231ms/step - loss: 8145.2207 - mean_io_u: 0.8575 - val_loss: 8660.0059 - val_mean_io_u: 0.8215
+Epoch 21/50
+
+Epoch 00021: LearningRateScheduler reducing learning rate to 0.00019638709830652336.
+318/318 [==============================] - 74s 231ms/step - loss: 8568.2559 - mean_io_u: 0.8521 - val_loss: 8005.9546 - val_mean_io_u: 0.8458
+Epoch 22/50
+
+Epoch 00022: LearningRateScheduler reducing learning rate to 0.00018734104858036995.
+318/318 [==============================] - 74s 231ms/step - loss: 7222.2041 - mean_io_u: 0.8763 - val_loss: 7471.1514 - val_mean_io_u: 0.8765
+Epoch 23/50
+
+Epoch 00023: LearningRateScheduler reducing learning rate to 0.0001781478281221294.
+318/318 [==============================] - 73s 230ms/step - loss: 7144.4722 - mean_io_u: 0.8772 - val_loss: 9803.3213 - val_mean_io_u: 0.8348
+Epoch 24/50
+
+Epoch 00024: LearningRateScheduler reducing learning rate to 0.00016884371837296743.
+318/318 [==============================] - 74s 232ms/step - loss: 7173.0952 - mean_io_u: 0.8764 - val_loss: 8793.7578 - val_mean_io_u: 0.8772
+Epoch 25/50
+
+Epoch 00025: LearningRateScheduler reducing learning rate to 0.00015946543840342055.
+318/318 [==============================] - 73s 231ms/step - loss: 7041.6489 - mean_io_u: 0.8785 - val_loss: 8804.6504 - val_mean_io_u: 0.8084
+Epoch 26/50
+
+Epoch 00026: LearningRateScheduler reducing learning rate to 0.00015005.
+318/318 [==============================] - 73s 229ms/step - loss: 7020.7705 - mean_io_u: 0.8790 - val_loss: 9471.7402 - val_mean_io_u: 0.8447
+Epoch 27/50
+
+Epoch 00027: LearningRateScheduler reducing learning rate to 0.00014063456159657946.
+318/318 [==============================] - 74s 232ms/step - loss: 7091.3354 - mean_io_u: 0.8779 - val_loss: 8243.0830 - val_mean_io_u: 0.8301
+Epoch 28/50
+
+Epoch 00028: LearningRateScheduler reducing learning rate to 0.00013125628162703257.
+318/318 [==============================] - 73s 230ms/step - loss: 7022.4263 - mean_io_u: 0.8787 - val_loss: 8253.5068 - val_mean_io_u: 0.8324
+Epoch 29/50
+
+Epoch 00029: LearningRateScheduler reducing learning rate to 0.00012195217187787059.
+318/318 [==============================] - 73s 230ms/step - loss: 6957.3247 - mean_io_u: 0.8798 - val_loss: 7536.9204 - val_mean_io_u: 0.8551
+Epoch 30/50
+
+Epoch 00030: LearningRateScheduler reducing learning rate to 0.00011275895141963.
+318/318 [==============================] - 73s 230ms/step - loss: 6885.7563 - mean_io_u: 0.8806 - val_loss: 11384.9961 - val_mean_io_u: 0.7866
+Epoch 31/50
+
+Epoch 00031: LearningRateScheduler reducing learning rate to 0.00010371290169347667.
+318/318 [==============================] - 73s 230ms/step - loss: 7366.6626 - mean_io_u: 0.8752 - val_loss: 9235.7646 - val_mean_io_u: 0.8350
+Epoch 32/50
+
+Epoch 00032: LearningRateScheduler reducing learning rate to 9.484972332493257e-05.
+318/318 [==============================] - 73s 230ms/step - loss: 6922.4268 - mean_io_u: 0.8803 - val_loss: 9449.3535 - val_mean_io_u: 0.8389
+Epoch 33/50
+
+Epoch 00033: LearningRateScheduler reducing learning rate to 8.620439522981734e-05.
+318/318 [==============================] - 73s 229ms/step - loss: 6910.3906 - mean_io_u: 0.8808 - val_loss: 8549.3301 - val_mean_io_u: 0.8193
+Epoch 34/50
+
+Epoch 00034: LearningRateScheduler reducing learning rate to 7.781103656844776e-05.
+318/318 [==============================] - 73s 229ms/step - loss: 6821.6465 - mean_io_u: 0.8816 - val_loss: 6258.8364 - val_mean_io_u: 0.8584
+Epoch 35/50
+
+Epoch 00035: LearningRateScheduler reducing learning rate to 6.970277209289941e-05.
+318/318 [==============================] - 73s 231ms/step - loss: 6850.4072 - mean_io_u: 0.8815 - val_loss: 9293.0127 - val_mean_io_u: 0.7689
+Epoch 36/50
+
+Epoch 00036: LearningRateScheduler reducing learning rate to 6.191160141874366e-05.
+318/318 [==============================] - 73s 230ms/step - loss: 6826.9971 - mean_io_u: 0.8816 - val_loss: 8404.3633 - val_mean_io_u: 0.8539
+Epoch 37/50
+
+Epoch 00037: LearningRateScheduler reducing learning rate to 5.446827273718397e-05.
+318/318 [==============================] - 74s 231ms/step - loss: 7011.2705 - mean_io_u: 0.8805 - val_loss: 8008.4492 - val_mean_io_u: 0.8206
+Epoch 38/50
+
+Epoch 00038: LearningRateScheduler reducing learning rate to 4.740216146599312e-05.
+318/318 [==============================] - 73s 229ms/step - loss: 6842.0586 - mean_io_u: 0.8813 - val_loss: 9033.7988 - val_mean_io_u: 0.8338
+Epoch 39/50
+
+Epoch 00039: LearningRateScheduler reducing learning rate to 4.074115431815937e-05.
+318/318 [==============================] - 73s 229ms/step - loss: 6788.4507 - mean_io_u: 0.8822 - val_loss: 14356.3750 - val_mean_io_u: 0.7894
+Epoch 40/50
+
+Epoch 00040: LearningRateScheduler reducing learning rate to 3.4511539245770414e-05.
+318/318 [==============================] - 73s 229ms/step - loss: 6917.9233 - mean_io_u: 0.8817 - val_loss: 9875.4707 - val_mean_io_u: 0.8363
+Epoch 41/50
+
+Epoch 00041: LearningRateScheduler reducing learning rate to 2.8737901693476642e-05.
+318/318 [==============================] - 73s 229ms/step - loss: 6875.0352 - mean_io_u: 0.8817 - val_loss: 11795.9395 - val_mean_io_u: 0.8059
+Epoch 42/50
+
+Epoch 00042: LearningRateScheduler reducing learning rate to 2.344302757097287e-05.
+318/318 [==============================] - 73s 228ms/step - loss: 6783.3682 - mean_io_u: 0.8823 - val_loss: 7636.6641 - val_mean_io_u: 0.8467
+Epoch 43/50
+
+Epoch 00043: LearningRateScheduler reducing learning rate to 1.8647813327422653e-05.
+318/318 [==============================] - 73s 228ms/step - loss: 6780.9854 - mean_io_u: 0.8826 - val_loss: 9097.2803 - val_mean_io_u: 0.8465
+Epoch 44/50
+
+Epoch 00044: LearningRateScheduler reducing learning rate to 1.4371183482720398e-05.
+318/318 [==============================] - 73s 228ms/step - loss: 6765.1270 - mean_io_u: 0.8826 - val_loss: 9204.8887 - val_mean_io_u: 0.8380
+Epoch 45/50
+
+Epoch 00045: LearningRateScheduler reducing learning rate to 1.063001594105671e-05.
+318/318 [==============================] - 73s 228ms/step - loss: 6765.7544 - mean_io_u: 0.8826 - val_loss: 7370.5381 - val_mean_io_u: 0.8193
+Epoch 46/50
+
+Epoch 00046: LearningRateScheduler reducing learning rate to 7.4390753815417276e-06.
+318/318 [==============================] - 72s 228ms/step - loss: 6762.9995 - mean_io_u: 0.8826 - val_loss: 7806.5171 - val_mean_io_u: 0.8328
+Epoch 47/50
+
+Epoch 00047: LearningRateScheduler reducing learning rate to 4.810954988761786e-06.
+318/318 [==============================] - 72s 228ms/step - loss: 6744.8828 - mean_io_u: 0.8827 - val_loss: 9234.9424 - val_mean_io_u: 0.8192
+Epoch 48/50
+
+Epoch 00048: LearningRateScheduler reducing learning rate to 2.756026753233126e-06.
+318/318 [==============================] - 73s 229ms/step - loss: 6757.0107 - mean_io_u: 0.8825 - val_loss: 8280.1250 - val_mean_io_u: 0.8153
+Epoch 49/50
+
+Epoch 00049: LearningRateScheduler reducing learning rate to 1.2824005378940589e-06.
+318/318 [==============================] - 73s 229ms/step - loss: 6733.8130 - mean_io_u: 0.8829 - val_loss: 7542.9204 - val_mean_io_u: 0.8533
+Epoch 50/50
+
+Epoch 00050: LearningRateScheduler reducing learning rate to 3.958920721806797e-07.
+318/318 [==============================] - 73s 229ms/step - loss: 6750.8369 - mean_io_u: 0.8827 - val_loss: 7824.6475 - val_mean_io_u: 0.8454

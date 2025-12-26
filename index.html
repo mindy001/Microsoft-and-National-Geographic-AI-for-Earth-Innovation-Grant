@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft and National Geographic AI for Earth Innovation Grant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a1929 0%, #1a237e 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 35, 126, 0.9) 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid #ffd700;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #ffd700;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        .project-title {
+            font-size: 1.5em;
+            color: #fff;
+            margin-top: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .nav-btn {
+            background: transparent;
+            color: #ffd700;
+            border: 2px solid #ffd700;
+            padding: 10px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: #ffd700;
+            color: #1a237e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .nav-btn.active {
+            background: #ffd700;
+            color: #1a237e;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            gap: 30px;
+        }
+
+        .page {
+            display: none;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            animation: fadeIn 0.5s;
+        }
+
+        .page.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .video-container {
+            max-width: 1200px;
+            width: 100%;
+            background: #000;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-thumbnail {
+            position: relative;
+            cursor: pointer;
+            display: block;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .play-button-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 0, 0, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .play-button-overlay::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 30px solid white;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            margin-left: 8px;
+        }
+
+        .video-thumbnail:hover .play-button-overlay {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: rgba(255, 0, 0, 1);
+        }
+
+        .video-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            color: #fff;
+            padding: 30px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .video-summary {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            color: #1a237e;
+            line-height: 1.8;
+        }
+
+        .video-summary h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #1a237e;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 10px;
+        }
+
+        .video-summary p {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .slide-container {
+            position: relative;
+            max-width: 1200px;
+            width: 100%;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px;
+            gap: 20px;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+        }
+
+        .nav-controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        button {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a237e;
+            border: none;
+            padding: 14px 35px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+        }
+
+        button:active {
+            transform: translateY(-1px);
+        }
+
+        button:disabled {
+            background: #999;
+            cursor: not-allowed;
+            opacity: 0.5;
+            box-shadow: none;
+        }
+
+        .switch-btn {
+            background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+            color: white;
+        }
+
+        .slide-info {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a237e;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700 0%, #ffed4e 100%);
+            transition: width 0.3s;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .keyboard-hint {
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .team-section {
+            max-width: 1200px;
+            width: 100%;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+            color: #1a237e;
+        }
+
+        .team-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #1a237e;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 15px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: #1a237e;
+        }
+
+        .team-member p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .team-member .role {
+            color: #ffd700;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .team-member .degree {
+            color: #4CAF50;
+            font-weight: 600;
+            font-size: 0.95em;
+            margin-top: 8px;
+        }
+
+        .partners-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .partners-section h3 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #1a237e;
+        }
+
+        .partners {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .partner {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            width: 100%;
+            max-width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .partner img {
+            max-width: 150px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .partner-name {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #1a237e;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .project-title {
+                font-size: 1.2em;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .nav-controls {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Microsoft and National Geographic<br>AI for Earth Innovation Grant</h1>
+        <div class="subtitle">Partnership: The Cropper Foundation and TTLAB</div>
+        <div class="subtitle">Technical Lead: Mindy Mohammed</div>
+        <div class="project-title" id="projectTitle">The F.A.A.I.R. Project</div>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" onclick="showPage('presentation')">Presentation</button>
+        <button class="nav-btn" onclick="showPage('team')">Team</button>
+    </nav>
+
+    <div class="container">
+        <!-- Presentation Page -->
+        <div id="presentationPage" class="page active">
+            <div class="video-container">
+                <a href="https://youtu.be/bdv3HeK3bb4" target="_blank" class="video-thumbnail">
+                    <img src="https://img.youtube.com/vi/bdv3HeK3bb4/maxresdefault.jpg" alt="Project Video">
+                    <div class="play-button-overlay"></div>
+                    <div class="video-text">Click to Watch Project Video on YouTube</div>
+                </a>
+            </div>
+
+            <div class="video-summary">
+                <h3>Project Overview</h3>
+                <p>The Farming Adaptation and Artificial Intelligence for Resilience (FAAIR) project leverages AI and drone technology to address critical agricultural challenges in Caribbean Small Island Developing States. Using machine learning models including XG-Boost, CNNs, and Support Vector Machines, we've developed innovative solutions for weed detection and water stress identification in tropical crops. Our work combines precision agriculture with climate adaptation strategies, providing small-holder farmers with accessible, AI-powered tools to improve crop yield and resilience in the face of climate change.</p>
+            </div>
+
+            <div class="slide-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <div id="slideShow">
+                    <!-- Slides will be dynamically inserted here -->
+                </div>
+
+                <div class="controls">
+                    <div class="nav-controls">
+                        <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+                        <div class="slide-info">
+                            <span id="currentSlide">1</span> / <span id="totalSlides">23</span>
+                        </div>
+                        <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+                    </div>
+                    <button class="switch-btn" id="switchBtn" onclick="switchFolder()">
+                        Switch to: Weed and Water Stress Detection
+                    </button>
+                </div>
+            </div>
+
+            <div class="keyboard-hint">
+                Use arrow keys ← → or buttons to navigate
+            </div>
+        </div>
+
+        <!-- Team Page -->
+        <div id="teamPage" class="page">
+            <div class="team-section">
+                <h2>Project Team</h2>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <h3>Mindy Mohammed</h3>
+                        <p class="role">Technical Lead</p>
+                        <p class="degree">MSc Data Science, UBC</p>
+                        <p>Department of Computer Science</p>
+                        <p>The University of the West Indies</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <h3>Jade Chattergoon</h3>
+                        <p class="role">Researcher</p>
+                        <p>Department of Computer Science</p>
+                        <p>The University of the West Indies</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <h3>Roganci Fontelera</h3>
+                        <p class="role">Researcher</p>
+                        <p>Department of Computer Science</p>
+                        <p>The University of the West Indies</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <h3>Keanu Nichols</h3>
+                        <p class="role">Researcher</p>
+                        <p>Boston University</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <h3>Omar Mohammed</h3>
+                        <p class="role">Project Coordinator</p>
+                        <p>The Cropper Foundation</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <h3>Patrick Hosein</h3>
+                        <p class="role">Principal Investigator</p>
+                        <p>Department of Computer Science</p>
+                        <p>The University of the West Indies</p>
+                    </div>
+                </div>
+
+                <div class="partners-section">
+                    <h3>Partner Organizations</h3>
+                    <div class="partners">
+                        <div class="partner">
+                            <img src="data/c/microsoft.png" alt="Microsoft" onerror="this.style.display='none'">
+                            <div class="partner-name">Microsoft</div>
+                        </div>
+                        <div class="partner">
+                            <img src="data/c/natgeo.png" alt="National Geographic" onerror="this.style.display='none'">
+                            <div class="partner-name">National Geographic Society</div>
+                        </div>
+                        <div class="partner">
+                            <img src="data/c/cropper.png" alt="The Cropper Foundation" onerror="this.style.display='none'">
+                            <div class="partner-name">The Cropper Foundation</div>
+                        </div>
+                        <div class="partner">
+                            <img src="data/c/ttlab.png" alt="TTLAB" onerror="this.style.display='none'">
+                            <div class="partner-name">TTLAB</div>
+                        </div>
+                        <div class="partner">
+                            <img src="data/c/nvidia.png" alt="NVIDIA" onerror="this.style.display='none'">
+                            <div class="partner-name">NVIDIA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        let currentFolder = 'a';
+        let totalSlides = 23;
+        const slideShow = document.getElementById('slideShow');
+
+        const projects = {
+            'a': {
+                title: 'The F.A.A.I.R. Project',
+                count: 23,
+                buttonText: 'Switch to: Weed and Water Stress Detection',
+                filePattern: (i) => `332023-${i}.png`
+            },
+            'b': {
+                title: 'Weed and Water Stress Detection using Drone Video',
+                count: 15,
+                buttonText: 'Switch to: The F.A.A.I.R. Project',
+                filePattern: (i) => `WaterStress and Weed Detection-${i}.png`
+            }
+        };
+
+        function showPage(pageName) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            
+            if (pageName === 'presentation') {
+                document.getElementById('presentationPage').classList.add('active');
+                document.querySelector('.nav-btn:first-child').classList.add('active');
+            } else if (pageName === 'team') {
+                document.getElementById('teamPage').classList.add('active');
+                document.querySelector('.nav-btn:last-child').classList.add('active');
+            }
+        }
+
+        function generateSlides() {
+            slideShow.innerHTML = '';
+            totalSlides = projects[currentFolder].count;
+            
+            for (let i = 1; i <= totalSlides; i++) {
+                const slide = document.createElement('div');
+                slide.className = 'slide';
+                if (i === 1) slide.classList.add('active');
+                
+                const img = document.createElement('img');
+                const fileName = projects[currentFolder].filePattern(i);
+                img.src = `data/${currentFolder}/${fileName}`;
+                img.alt = `Slide ${i}`;
+                img.onerror = function() {
+                    this.alt = `Image not found: data/${currentFolder}/${fileName}`;
+                    this.style.padding = '40px';
+                    this.style.background = '#f0f0f0';
+                    this.style.color = '#333';
+                    this.style.textAlign = 'center';
+                    this.style.minHeight = '400px';
+                    this.style.display = 'flex';
+                    this.style.alignItems = 'center';
+                    this.style.justifyContent = 'center';
+                };
+                
+                slide.appendChild(img);
+                slideShow.appendChild(slide);
+            }
+            
+            currentSlide = 0;
+            showSlide(0);
+        }
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            if (slides.length === 0) return;
+            
+            slides.forEach(s => s.classList.remove('active'));
+            currentSlide = Math.max(0, Math.min(n, totalSlides - 1));
+            slides[currentSlide].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = currentSlide + 1;
+            document.getElementById('totalSlides').textContent = totalSlides;
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+            
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        function switchFolder() {
+            currentFolder = currentFolder === 'a' ? 'b' : 'a';
+            document.getElementById('projectTitle').textContent = projects[currentFolder].title;
+            document.getElementById('switchBtn').textContent = projects[currentFolder].buttonText;
+            generateSlides();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('presentationPage').classList.contains('active')) {
+                if (e.key === 'ArrowLeft' && currentSlide > 0) {
+                    changeSlide(-1);
+                } else if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) {
+                    changeSlide(1);
+                }
+            }
+        });
+
+        // Initialize
+        generateSlides();
+    </script>
+</body>
+</html>

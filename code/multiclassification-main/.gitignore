@@ -1,0 +1,13 @@
+model/
+Amazing-Semantic-Segmentation-master/CamVid/*
+data/*
+!data/Sequoia
+data/Sequoia/*
+!data/Sequoia/SequoiaMulti_30
+data/Sequoia/SequoiaMulti_30/*
+!data/Sequoia/SequoiaMulti_30/combine_images.py
+!data/Sequoia/SequoiaMulti_30/combine_images_test.py
+!data/Sequoia/SequoiaMulti_30/partition_training_image_full_color.py
+!data/Sequoia/SequoiaMulti_30/partition_testing_image_full_color.py
+!data/Sequoia/SequoiaMulti_30/metrics_test.py
+
