@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microsoft and National Geographic AI for Earth Innovation Grant</title>
+    <title>FAAIR Project - AI for Earth Innovation</title>
     <style>
         * {
             margin: 0;
@@ -12,77 +12,139 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a1929 0%, #1a237e 100%);
-            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #212529;
             min-height: 100vh;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: linear-gradient(180deg, #1e3a5f 0%, #2c5282 100%);
+            color: #fff;
+            padding: 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .sidebar-header {
+            padding: 40px 30px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-header h2 {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .sidebar-header p {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+
+        .menu {
+            padding: 20px 0;
+        }
+
+        .menu-section {
+            margin-bottom: 30px;
+        }
+
+        .menu-label {
+            padding: 0 30px;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 16px 30px;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 1em;
+            cursor: pointer;
+            border-left: 4px solid transparent;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border-left-color: #ffd700;
+        }
+
+        .menu-item.active {
+            background: rgba(255, 215, 0, 0.15);
+            color: #ffd700;
+            border-left-color: #ffd700;
+            font-weight: 600;
+        }
+
+        .main-wrapper {
+            margin-left: 280px;
+            flex: 1;
             display: flex;
             flex-direction: column;
         }
 
         header {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 35, 126, 0.9) 100%);
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 4px solid #ffd700;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 50px 40px;
+            border-bottom: 1px solid #dee2e6;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
+            font-size: 2.8em;
+            margin-bottom: 20px;
             font-weight: 700;
-            letter-spacing: 0.5px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: -1px;
+            color: #1e3a5f;
+            line-height: 1.2;
         }
 
-        .subtitle {
-            font-size: 1.2em;
-            color: #ffd700;
-            margin-top: 8px;
-            font-weight: 500;
+        .header-subtitle {
+            font-size: 1.3em;
+            color: #495057;
+            margin-bottom: 12px;
+            font-weight: 400;
         }
 
-        .project-title {
-            font-size: 1.5em;
-            color: #fff;
-            margin-top: 20px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 15px;
+        .header-meta {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
 
-        .nav-btn {
-            background: transparent;
-            color: #ffd700;
-            border: 2px solid #ffd700;
-            padding: 10px 30px;
-            font-size: 16px;
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #6c757d;
+            font-size: 0.95em;
+        }
+
+        .meta-label {
             font-weight: 600;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .nav-btn:hover {
-            background: #ffd700;
-            color: #1a237e;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-        }
-
-        .nav-btn.active {
-            background: #ffd700;
-            color: #1a237e;
+            color: #495057;
         }
 
         .container {
@@ -90,16 +152,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 30px 20px;
-            gap: 30px;
+            padding: 50px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .page {
             display: none;
             width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
             animation: fadeIn 0.5s;
         }
 
@@ -107,19 +168,36 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 40px;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .page-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .page-description {
+            font-size: 1.15em;
+            color: #6c757d;
+            text-align: center;
+            max-width: 800px;
+            line-height: 1.6;
         }
 
         .video-container {
             max-width: 1200px;
             width: 100%;
             background: #000;
-            border-radius: 15px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             position: relative;
         }
@@ -164,6 +242,7 @@
         .video-thumbnail:hover .play-button-overlay {
             transform: translate(-50%, -50%) scale(1.1);
             background: rgba(255, 0, 0, 1);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
         }
 
         .video-text {
@@ -173,34 +252,33 @@
             right: 0;
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
             color: #fff;
-            padding: 30px;
-            font-size: 20px;
+            padding: 40px;
+            font-size: 1.3em;
             text-align: center;
             font-weight: 600;
         }
 
-        .video-summary {
+        .content-card {
             max-width: 1200px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            color: #1a237e;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             line-height: 1.8;
         }
 
-        .video-summary h3 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            color: #1a237e;
-            border-bottom: 3px solid #ffd700;
-            padding-bottom: 10px;
+        .content-card h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #1e3a5f;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
-        .video-summary p {
+        .content-card p {
             font-size: 1.1em;
-            color: #333;
+            color: #495057;
         }
 
         .slide-container {
@@ -208,8 +286,8 @@
             max-width: 1200px;
             width: 100%;
             background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             overflow: hidden;
         }
 
@@ -232,187 +310,200 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px;
-            gap: 20px;
+            padding: 30px;
+            gap: 25px;
             flex-wrap: wrap;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            background: #f8f9fa;
+            border-top: 1px solid #dee2e6;
         }
 
         .nav-controls {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             align-items: center;
         }
 
         button {
-            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-            color: #1a237e;
+            background: linear-gradient(135deg, #ffd700 0%, #ffc107 100%);
+            color: #1e3a5f;
             border: none;
-            padding: 14px 35px;
-            font-size: 16px;
-            font-weight: bold;
+            padding: 14px 32px;
+            font-size: 1em;
+            font-weight: 600;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
         }
 
         button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
         }
 
         button:active {
-            transform: translateY(-1px);
+            transform: translateY(0);
         }
 
         button:disabled {
-            background: #999;
+            background: #e9ecef;
+            color: #adb5bd;
             cursor: not-allowed;
-            opacity: 0.5;
             box-shadow: none;
         }
 
         .switch-btn {
-            background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
             color: white;
         }
 
         .slide-info {
             text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-            color: #1a237e;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #495057;
         }
 
         .progress-bar {
             width: 100%;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.2);
+            height: 4px;
+            background: #e9ecef;
             position: relative;
             overflow: hidden;
         }
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #ffd700 0%, #ffed4e 100%);
+            background: linear-gradient(90deg, #ffd700 0%, #ffc107 100%);
             transition: width 0.3s;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
         .keyboard-hint {
             text-align: center;
-            padding: 15px;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            font-size: 0.9em;
+            color: #adb5bd;
         }
 
         .team-section {
             max-width: 1200px;
             width: 100%;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
-            color: #1a237e;
         }
 
-        .team-section h2 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
+        .team-header {
             text-align: center;
-            color: #1a237e;
-            border-bottom: 3px solid #ffd700;
-            padding-bottom: 15px;
+            margin-bottom: 50px;
         }
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
 
         .team-member {
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-            padding: 30px;
-            border-radius: 10px;
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border: 1px solid #e9ecef;
+            display: flex;
+            flex-direction: column;
+            min-height: 320px;
         }
 
         .team-member:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .team-content {
+            flex: 1;
         }
 
         .team-member h3 {
-            font-size: 1.4em;
-            margin-bottom: 10px;
-            color: #1a237e;
+            font-size: 1.5em;
+            margin-bottom: 12px;
+            color: #1e3a5f;
+            font-weight: 700;
         }
 
         .team-member p {
             font-size: 1em;
-            color: #666;
-            margin-bottom: 5px;
+            color: #6c757d;
+            margin-bottom: 6px;
+            line-height: 1.5;
         }
 
         .team-member .role {
-            color: #ffd700;
+            color: #d69e2e;
             font-weight: 600;
             font-size: 1.1em;
-            margin-top: 10px;
+            margin-top: 12px;
+            margin-bottom: 8px;
         }
 
         .team-member .degree {
-            color: #4CAF50;
+            color: #28a745;
             font-weight: 600;
             font-size: 0.95em;
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
-        .partners-section {
-            margin-top: 40px;
-            text-align: center;
+        .linkedin-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0077b5;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s;
         }
 
-        .partners-section h3 {
-            font-size: 1.8em;
-            margin-bottom: 30px;
-            color: #1a237e;
+        .linkedin-link:hover {
+            background: #005885;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
         }
 
         .partners {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
             align-items: center;
             justify-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .partner {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s;
             width: 100%;
-            max-width: 250px;
+            max-width: 260px;
+            height: 200px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            border: 1px solid #e9ecef;
         }
 
         .partner:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
         }
 
         .partner img {
-            max-width: 150px;
+            max-width: 160px;
             max-height: 80px;
             width: auto;
             height: auto;
@@ -420,19 +511,112 @@
         }
 
         .partner-name {
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 600;
-            color: #1a237e;
-            margin-top: 15px;
+            color: #495057;
+            margin-top: 18px;
+            text-align: center;
+        }
+
+        .resources-section {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .resource-card {
+            background: #ffffff;
+            padding: 35px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+            border: 1px solid #e9ecef;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .resource-card h3 {
+            color: #1e3a5f;
+            margin-bottom: 18px;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .resource-card p {
+            color: #495057;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .resource-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #ffd700;
+            color: #1e3a5f;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .resource-link:hover {
+            background: #ffc107;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+        }
+
+        .objectives-list {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .objectives-list li {
+            color: #495057;
+            margin: 12px 0;
+            padding-left: 15px;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 240px;
+            }
+
+            .main-wrapper {
+                margin-left: 240px;
+            }
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8em;
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
             }
 
-            .project-title {
-                font-size: 1.2em;
+            .main-wrapper {
+                margin-left: 0;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            header {
+                padding: 30px 20px;
+            }
+
+            .container {
+                padding: 30px 20px;
             }
 
             .controls {
@@ -444,10 +628,6 @@
                 justify-content: space-between;
             }
 
-            nav {
-                flex-wrap: wrap;
-            }
-
             .team-grid {
                 grid-template-columns: 1fr;
             }
@@ -455,112 +635,213 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Microsoft and National Geographic<br>AI for Earth Innovation Grant</h1>
-        <div class="subtitle">Partnership: The Cropper Foundation and TTLAB</div>
-        <div class="subtitle">Technical Lead: Mindy Mohammed</div>
-        <div class="project-title" id="projectTitle">The F.A.A.I.R. Project</div>
-    </header>
-
-    <nav>
-        <button class="nav-btn active" onclick="showPage('presentation')">Presentation</button>
-        <button class="nav-btn" onclick="showPage('team')">Team</button>
-    </nav>
-
-    <div class="container">
-        <!-- Presentation Page -->
-        <div id="presentationPage" class="page active">
-            <div class="video-container">
-                <a href="https://youtu.be/bdv3HeK3bb4" target="_blank" class="video-thumbnail">
-                    <img src="https://img.youtube.com/vi/bdv3HeK3bb4/maxresdefault.jpg" alt="Project Video">
-                    <div class="play-button-overlay"></div>
-                    <div class="video-text">Click to Watch Project Video on YouTube</div>
-                </a>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>FAAIR Project</h2>
+            <p>AI for Earth Innovation Grant</p>
+        </div>
+        <div class="menu">
+            <div class="menu-section">
+                <div class="menu-label">Project</div>
+                <a class="menu-item active" onclick="showPage('overview')">Overview</a>
+                <a class="menu-item" onclick="showPage('presentation1')">Main Presentation</a>
+                <a class="menu-item" onclick="showPage('presentation2')">Semantic Detection Methods</a>
             </div>
-
-            <div class="video-summary">
-                <h3>Project Overview</h3>
-                <p>The Farming Adaptation and Artificial Intelligence for Resilience (FAAIR) project leverages AI and drone technology to address critical agricultural challenges in Caribbean Small Island Developing States. Using machine learning models including XG-Boost, CNNs, and Support Vector Machines, we've developed innovative solutions for weed detection and water stress identification in tropical crops. Our work combines precision agriculture with climate adaptation strategies, providing small-holder farmers with accessible, AI-powered tools to improve crop yield and resilience in the face of climate change.</p>
-            </div>
-
-            <div class="slide-container">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
-                
-                <div id="slideShow">
-                    <!-- Slides will be dynamically inserted here -->
-                </div>
-
-                <div class="controls">
-                    <div class="nav-controls">
-                        <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
-                        <div class="slide-info">
-                            <span id="currentSlide">1</span> / <span id="totalSlides">23</span>
-                        </div>
-                        <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
-                    </div>
-                    <button class="switch-btn" id="switchBtn" onclick="switchFolder()">
-                        Switch to: Weed and Water Stress Detection
-                    </button>
-                </div>
-            </div>
-
-            <div class="keyboard-hint">
-                Use arrow keys ← → or buttons to navigate
+            <div class="menu-section">
+                <div class="menu-label">About</div>
+                <a class="menu-item" onclick="showPage('team')">Team</a>
+                <a class="menu-item" onclick="showPage('partners')">Partners</a>
+                <a class="menu-item" onclick="showPage('resources')">Resources</a>
             </div>
         </div>
+    </div>
 
-        <!-- Team Page -->
-        <div id="teamPage" class="page">
-            <div class="team-section">
-                <h2>Project Team</h2>
+    <div class="main-wrapper">
+        <header>
+            <div class="header-content">
+                <h1>Microsoft and National Geographic<br>AI for Earth Innovation Grant</h1>
+                <p class="header-subtitle">Farming Adaptation and Artificial Intelligence for Resilience</p>
+                <div class="header-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Partners:</span>
+                        <span>The Cropper Foundation & TTLAB</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Technical Lead:</span>
+                        <span>Mindy Mohammed</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Overview Page -->
+            <div id="overviewPage" class="page active">
+                <h2 class="page-title">Project Overview</h2>
+                <p class="page-description">Leveraging AI and drone technology to address critical agricultural challenges in Caribbean Small Island Developing States</p>
                 
-                <div class="team-grid">
-                    <div class="team-member">
-                        <h3>Mindy Mohammed</h3>
-                        <p class="role">Technical Lead</p>
-                        <p class="degree">MSc Data Science, UBC</p>
-                        <p>Department of Computer Science</p>
-                        <p>The University of the West Indies</p>
+                <div class="video-container">
+                    <a href="https://youtu.be/bdv3HeK3bb4" target="_blank" class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/bdv3HeK3bb4/maxresdefault.jpg" alt="Project Video">
+                        <div class="play-button-overlay"></div>
+                        <div class="video-text">Watch Project Video on YouTube</div>
+                    </a>
+                </div>
+
+                <div class="content-card">
+                    <h3>About FAAIR</h3>
+                    <p>The Farming Adaptation and Artificial Intelligence for Resilience (FAAIR) project leverages AI and drone technology to address critical agricultural challenges in Caribbean Small Island Developing States. Using machine learning models including XG-Boost, CNNs, and Support Vector Machines, we've developed innovative solutions for weed detection and water stress identification in tropical crops. Our work combines precision agriculture with climate adaptation strategies, providing small-holder farmers with accessible, AI-powered tools to improve crop yield and resilience in the face of climate change.</p>
+                </div>
+            </div>
+
+            <!-- Presentation 1 Page -->
+            <div id="presentation1Page" class="page">
+                <h2 class="page-title">The F.A.A.I.R. Project</h2>
+                <p class="page-description">Main project presentation and findings</p>
+
+                <div class="slide-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill1"></div>
                     </div>
                     
-                    <div class="team-member">
-                        <h3>Jade Chattergoon</h3>
-                        <p class="role">Researcher</p>
-                        <p>Department of Computer Science</p>
-                        <p>The University of the West Indies</p>
+                    <div id="slideShow1">
+                        <!-- Slides will be dynamically inserted here -->
                     </div>
-                    
-                    <div class="team-member">
-                        <h3>Roganci Fontelera</h3>
-                        <p class="role">Researcher</p>
-                        <p>Department of Computer Science</p>
-                        <p>The University of the West Indies</p>
-                    </div>
-                    
-                    <div class="team-member">
-                        <h3>Keanu Nichols</h3>
-                        <p class="role">Researcher</p>
-                        <p>Boston University</p>
-                    </div>
-                    
-                    <div class="team-member">
-                        <h3>Omar Mohammed</h3>
-                        <p class="role">Project Coordinator</p>
-                        <p>The Cropper Foundation</p>
-                    </div>
-                    
-                    <div class="team-member">
-                        <h3>Patrick Hosein</h3>
-                        <p class="role">Principal Investigator</p>
-                        <p>Department of Computer Science</p>
-                        <p>The University of the West Indies</p>
+
+                    <div class="controls">
+                        <div class="nav-controls">
+                            <button id="prevBtn1" onclick="changeSlide(1, -1)">← Previous</button>
+                            <div class="slide-info">
+                                <span id="currentSlide1">1</span> / <span id="totalSlides1">23</span>
+                            </div>
+                            <button id="nextBtn1" onclick="changeSlide(1, 1)">Next →</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="partners-section">
-                    <h3>Partner Organizations</h3>
+                <div class="keyboard-hint">
+                    Use arrow keys ← → or buttons to navigate
+                </div>
+            </div>
+
+            <!-- Presentation 2 Page -->
+            <div id="presentation2Page" class="page">
+                <h2 class="page-title">Semantic Detection Methods</h2>
+                <p class="page-description">A semantic approach to weed and water stress detection using drone video</p>
+
+                <div class="slide-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill2"></div>
+                    </div>
+                    
+                    <div id="slideShow2">
+                        <!-- Slides will be dynamically inserted here -->
+                    </div>
+
+                    <div class="controls">
+                        <div class="nav-controls">
+                            <button id="prevBtn2" onclick="changeSlide(2, -1)">← Previous</button>
+                            <div class="slide-info">
+                                <span id="currentSlide2">1</span> / <span id="totalSlides2">15</span>
+                            </div>
+                            <button id="nextBtn2" onclick="changeSlide(2, 1)">Next →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="keyboard-hint">
+                    Use arrow keys ← → or buttons to navigate
+                </div>
+            </div>
+
+            <!-- Team Page -->
+            <div id="teamPage" class="page">
+                <div class="team-section">
+                    <div class="team-header">
+                        <h2 class="page-title">Project Team</h2>
+                        <p class="page-description">Meet the researchers and partners behind FAAIR</p>
+                    </div>
+                    
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="team-content">
+                                <h3>Patrick Hosein</h3>
+                                <p class="role">Principal Investigator</p>
+                                <p>Department of Computer Science</p>
+                                <p>The University of the West Indies</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/phosein/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="team-content">
+                                <h3>Omar Mohammed</h3>
+                                <p class="role">Project Coordinator</p>
+                                <p>The Cropper Foundation</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/omar-h-mohammed/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="team-content">
+                                <h3>Mindy Mohammed</h3>
+                                <p class="role">Technical Lead</p>
+                                <p class="degree">MSc Data Science, UBC</p>
+                                <p>Department of Computer Science</p>
+                                <p>The University of the West Indies</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/fazeeia-mohammed/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="team-content">
+                                <h3>Keanu Nichols</h3>
+                                <p class="role">Researcher</p>
+                                <p>Boston University</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/keanu-nichols/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="team-content">
+                                <h3>Roganci Fontelera</h3>
+                                <p class="role">Researcher</p>
+                                <p>Department of Computer Science</p>
+                                <p>The University of the West Indies</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/roganci-fontelera-11b33221b/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="team-content">
+                                <h3>Jade Chattergoon</h3>
+                                <p class="role">Researcher</p>
+                                <p>Department of Computer Science</p>
+                                <p>The University of the West Indies</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/jade-persad-03445486/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="team-content">
+                                <h3>Aqeel Mohammed</h3>
+                                <p class="role">Researcher</p>
+                                <p>Department of Computer Science</p>
+                                <p>The University of the West Indies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partners Page -->
+            <div id="partnersPage" class="page">
+                <div class="team-section">
+                    <div class="team-header">
+                        <h2 class="page-title">Partner Organizations</h2>
+                        <p class="page-description">Collaborating to advance AI for climate-smart agriculture</p>
+                    </div>
+                    
                     <div class="partners">
                         <div class="partner">
                             <img src="data/c/microsoft.png" alt="Microsoft" onerror="this.style.display='none'">
@@ -585,58 +866,106 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Resources Page -->
+            <div id="resourcesPage" class="page">
+                <div class="resources-section">
+                    <div class="team-header">
+                        <h2 class="page-title">Project Resources</h2>
+                        <p class="page-description">Learn more about FAAIR and access project information</p>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>FAAIR Project Objectives</h3>
+                        <p>The FAAIR project aims to revolutionize smallholder agriculture in the Caribbean through advanced AI technology:</p>
+                        <ul class="objectives-list">
+                            <li>Enable real-time and rapid assessment of smallholder crop and soil health and cover using machine learning models that combine vegetation indices</li>
+                            <li>Deploy solutions using Unmanned Aerial Vehicles (UAVs) over a variety of landscapes and production systems characteristic of small island states</li>
+                            <li>Generate comprehensive landscape data, reducing reliance on post-processing expertise and expensive satellite imagery</li>
+                            <li>Support the adoption of AI for climate-smart agriculture in the Caribbean region</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>Grant Recognition</h3>
+                        <p>The FAAIR project has received prestigious grants from multiple organizations, demonstrating the significance and potential impact of this work:</p>
+                        <p><strong>• National Geographic AI for Earth Innovation Grant</strong><br>
+                        <strong>• Microsoft Azure AI for Earth Grant</strong><br>
+                        <strong>• NVIDIA Grant Support</strong></p>
+                        <a href="https://lab.tt/index.php/grants/" target="_blank" class="resource-link">View Grant Details</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>Development Lab</h3>
+                        <p>Learn more about the Data for Development initiative at The Cropper Foundation, which houses the FAAIR project and other innovative agricultural technology solutions.</p>
+                        <a href="https://thecropperfoundation.org/project/data-for-development/" target="_blank" class="resource-link">Visit Development Lab</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>Featured Article</h3>
+                        <p>Read about how a Trinidadian professor and NGO received the National Geographic Society grant to advance artificial intelligence in agriculture and transform farming practices in the Caribbean.</p>
+                        <a href="https://thecropperfoundation.org/news/trinidadian-professor-and-ngo-receive-grant-from-the-national-geographic-society-to-advance-artificial-intelligence-in-agriculture/" target="_blank" class="resource-link">Read Article</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        let currentSlide = 0;
-        let currentFolder = 'a';
-        let totalSlides = 23;
-        const slideShow = document.getElementById('slideShow');
-
-        const projects = {
-            'a': {
-                title: 'The F.A.A.I.R. Project',
-                count: 23,
-                buttonText: 'Switch to: Weed and Water Stress Detection',
+        const presentations = {
+            1: {
+                currentSlide: 0,
+                folder: 'a',
+                totalSlides: 23,
                 filePattern: (i) => `332023-${i}.png`
             },
-            'b': {
-                title: 'Weed and Water Stress Detection using Drone Video',
-                count: 15,
-                buttonText: 'Switch to: The F.A.A.I.R. Project',
+            2: {
+                currentSlide: 0,
+                folder: 'b',
+                totalSlides: 15,
                 filePattern: (i) => `WaterStress and Weed Detection-${i}.png`
             }
         };
 
         function showPage(pageName) {
             document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.menu-item').forEach(btn => btn.classList.remove('active'));
             
-            if (pageName === 'presentation') {
-                document.getElementById('presentationPage').classList.add('active');
-                document.querySelector('.nav-btn:first-child').classList.add('active');
-            } else if (pageName === 'team') {
-                document.getElementById('teamPage').classList.add('active');
-                document.querySelector('.nav-btn:last-child').classList.add('active');
+            const pages = {
+                'overview': 'overviewPage',
+                'presentation1': 'presentation1Page',
+                'presentation2': 'presentation2Page',
+                'team': 'teamPage',
+                'partners': 'partnersPage',
+                'resources': 'resourcesPage'
+            };
+            
+            document.getElementById(pages[pageName]).classList.add('active');
+            
+            const menuItems = document.querySelectorAll('.menu-item');
+            const pageOrder = ['overview', 'presentation1', 'presentation2', 'team', 'partners', 'resources'];
+            const index = pageOrder.indexOf(pageName);
+            if (index !== -1) {
+                menuItems[index].classList.add('active');
             }
         }
 
-        function generateSlides() {
+        function generateSlides(presentationNum) {
+            const pres = presentations[presentationNum];
+            const slideShow = document.getElementById(`slideShow${presentationNum}`);
             slideShow.innerHTML = '';
-            totalSlides = projects[currentFolder].count;
             
-            for (let i = 1; i <= totalSlides; i++) {
+            for (let i = 1; i <= pres.totalSlides; i++) {
                 const slide = document.createElement('div');
                 slide.className = 'slide';
                 if (i === 1) slide.classList.add('active');
                 
                 const img = document.createElement('img');
-                const fileName = projects[currentFolder].filePattern(i);
-                img.src = `data/${currentFolder}/${fileName}`;
+                const fileName = pres.filePattern(i);
+                img.src = `data/${pres.folder}/${fileName}`;
                 img.alt = `Slide ${i}`;
                 img.onerror = function() {
-                    this.alt = `Image not found: data/${currentFolder}/${fileName}`;
+                    this.alt = `Image not found: data/${pres.folder}/${fileName}`;
                     this.style.padding = '40px';
                     this.style.background = '#f0f0f0';
                     this.style.color = '#333';
@@ -651,51 +980,55 @@
                 slideShow.appendChild(slide);
             }
             
-            currentSlide = 0;
-            showSlide(0);
+            pres.currentSlide = 0;
+            showSlide(presentationNum, 0);
         }
 
-        function showSlide(n) {
-            const slides = document.querySelectorAll('.slide');
+        function showSlide(presentationNum, n) {
+            const pres = presentations[presentationNum];
+            const slides = document.querySelectorAll(`#slideShow${presentationNum} .slide`);
             if (slides.length === 0) return;
             
             slides.forEach(s => s.classList.remove('active'));
-            currentSlide = Math.max(0, Math.min(n, totalSlides - 1));
-            slides[currentSlide].classList.add('active');
+            pres.currentSlide = Math.max(0, Math.min(n, pres.totalSlides - 1));
+            slides[pres.currentSlide].classList.add('active');
             
-            document.getElementById('currentSlide').textContent = currentSlide + 1;
-            document.getElementById('totalSlides').textContent = totalSlides;
-            document.getElementById('prevBtn').disabled = currentSlide === 0;
-            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+            document.getElementById(`currentSlide${presentationNum}`).textContent = pres.currentSlide + 1;
+            document.getElementById(`totalSlides${presentationNum}`).textContent = pres.totalSlides;
+            document.getElementById(`prevBtn${presentationNum}`).disabled = pres.currentSlide === 0;
+            document.getElementById(`nextBtn${presentationNum}`).disabled = pres.currentSlide === pres.totalSlides - 1;
             
-            const progress = ((currentSlide + 1) / totalSlides) * 100;
-            document.getElementById('progressFill').style.width = progress + '%';
+            const progress = ((pres.currentSlide + 1) / pres.totalSlides) * 100;
+            document.getElementById(`progressFill${presentationNum}`).style.width = progress + '%';
         }
 
-        function changeSlide(direction) {
-            showSlide(currentSlide + direction);
-        }
-
-        function switchFolder() {
-            currentFolder = currentFolder === 'a' ? 'b' : 'a';
-            document.getElementById('projectTitle').textContent = projects[currentFolder].title;
-            document.getElementById('switchBtn').textContent = projects[currentFolder].buttonText;
-            generateSlides();
+        function changeSlide(presentationNum, direction) {
+            const pres = presentations[presentationNum];
+            showSlide(presentationNum, pres.currentSlide + direction);
         }
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (document.getElementById('presentationPage').classList.contains('active')) {
-                if (e.key === 'ArrowLeft' && currentSlide > 0) {
-                    changeSlide(-1);
-                } else if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) {
-                    changeSlide(1);
+            if (document.getElementById('presentation1Page').classList.contains('active')) {
+                const pres = presentations[1];
+                if (e.key === 'ArrowLeft' && pres.currentSlide > 0) {
+                    changeSlide(1, -1);
+                } else if (e.key === 'ArrowRight' && pres.currentSlide < pres.totalSlides - 1) {
+                    changeSlide(1, 1);
+                }
+            } else if (document.getElementById('presentation2Page').classList.contains('active')) {
+                const pres = presentations[2];
+                if (e.key === 'ArrowLeft' && pres.currentSlide > 0) {
+                    changeSlide(2, -1);
+                } else if (e.key === 'ArrowRight' && pres.currentSlide < pres.totalSlides - 1) {
+                    changeSlide(2, 1);
                 }
             }
         });
 
         // Initialize
-        generateSlides();
+        generateSlides(1);
+        generateSlides(2);
     </script>
 </body>
 </html>
