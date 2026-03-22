@@ -352,11 +352,6 @@
             box-shadow: none;
         }
 
-        .switch-btn {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            color: white;
-        }
-
         .slide-info {
             text-align: center;
             font-size: 1.1em;
@@ -418,7 +413,7 @@
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
         }
-        
+
         .team-content {
             flex: 1;
         }
@@ -586,51 +581,539 @@
             font-size: 1.05em;
         }
 
-        @media (max-width: 1024px) {
-            .sidebar {
-                width: 240px;
-            }
+        /* ─── DATA & ENVIRONMENT PAGE STYLES ─────────────────────── */
 
-            .main-wrapper {
-                margin-left: 240px;
-            }
+        .env-section {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .env-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Stat strip */
+        .stat-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+            border-top: 4px solid #ffd700;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover { transform: translateY(-4px); }
+
+        .stat-card.blue  { border-top-color: #3b82f6; }
+        .stat-card.green { border-top-color: #22c55e; }
+        .stat-card.amber { border-top-color: #fbbf24; }
+        .stat-card.red   { border-top-color: #ef4444; }
+        .stat-card.teal  { border-top-color: #14b8a6; }
+
+        .stat-value {
+            font-size: 2.4em;
+            font-weight: 700;
+            color: #1e3a5f;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #6c757d;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Section cards */
+        .env-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 42px;
+            box-shadow: 0 10px 36px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .env-card-title {
+            font-size: 1.7em;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .env-card-title .icon {
+            width: 42px; height: 42px;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+
+        .icon-brown  { background: #fef3c7; }
+        .icon-blue   { background: #dbeafe; }
+        .icon-green  { background: #dcfce7; }
+        .icon-amber  { background: #fef9c3; }
+
+        .env-card-subtitle {
+            font-size: 1em;
+            color: #6c757d;
+            margin-bottom: 28px;
+            margin-left: 56px;
+        }
+
+        .env-card p {
+            font-size: 1.08em;
+            color: #495057;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .env-card p:last-child { margin-bottom: 0; }
+
+        /* Two-column grid inside env card */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
+
+        .info-block {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 22px 24px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .info-block.blue  { border-left-color: #3b82f6; }
+        .info-block.green { border-left-color: #22c55e; }
+        .info-block.teal  { border-left-color: #14b8a6; }
+        .info-block.red   { border-left-color: #ef4444; }
+
+        .info-block h4 {
+            font-size: 1em;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.85em;
+        }
+
+        .info-block p {
+            font-size: 0.98em !important;
+            color: #495057;
+            line-height: 1.7;
+            margin-bottom: 0 !important;
+        }
+
+        /* Formula display */
+        .formula-box {
+            background: #1e3a5f;
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin: 24px 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffd700;
+            font-size: 1.05em;
+            line-height: 1.9;
+            box-shadow: 0 6px 20px rgba(30,58,95,0.25);
+        }
+
+        .formula-box .formula-label {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255,215,0,0.6);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .formula-box .var-row {
+            font-size: 0.88em;
+            color: rgba(255,255,255,0.75);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin-top: 16px;
+            line-height: 1.7;
+        }
+
+        /* Soil zone table */
+        .zone-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 24px;
+            font-size: 0.97em;
+        }
+
+        .zone-table thead tr {
+            background: #1e3a5f;
+            color: #ffd700;
+        }
+
+        .zone-table thead th {
+            padding: 14px 18px;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            font-size: 0.9em;
+        }
+
+        .zone-table tbody tr {
+            border-bottom: 1px solid #e9ecef;
+            transition: background 0.2s;
+        }
+
+        .zone-table tbody tr:hover { background: #f8f9fa; }
+
+        .zone-table tbody td {
+            padding: 14px 18px;
+            color: #495057;
+            line-height: 1.5;
+        }
+
+        .zone-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.82em;
+            font-weight: 600;
+        }
+
+        .badge-upland   { background: #fef9c3; color: #92400e; }
+        .badge-terraced { background: #dbeafe; color: #1e40af; }
+        .badge-alluvial { background: #dcfce7; color: #166534; }
+
+        /* Flight condition table */
+        .condition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .condition-card {
+            border-radius: 10px;
+            padding: 22px;
+            border: 1px solid #e9ecef;
+            transition: transform 0.25s;
+        }
+
+        .condition-card:hover { transform: translateY(-3px); }
+
+        .condition-card.ok      { background: #f0fdf4; border-top: 3px solid #22c55e; }
+        .condition-card.caution { background: #fffbeb; border-top: 3px solid #f59e0b; }
+        .condition-card.stop    { background: #fff1f2; border-top: 3px solid #ef4444; }
+
+        .condition-label {
+            font-size: 0.75em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .condition-card.ok      .condition-label { color: #16a34a; }
+        .condition-card.caution .condition-label { color: #d97706; }
+        .condition-card.stop    .condition-label { color: #dc2626; }
+
+        .condition-card h4 {
+            font-size: 1em;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+        }
+
+        .condition-card p {
+            font-size: 0.93em !important;
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 0 !important;
+        }
+
+        /* Rainfall timeline */
+        .season-bar {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 4px;
+            margin-top: 24px;
+        }
+
+        .month-col {
+            text-align: center;
+        }
+
+        .month-fill {
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 6px;
+            transition: transform 0.2s;
+        }
+
+        .month-fill:hover { transform: scaleY(1.05); }
+
+        .month-label {
+            font-size: 0.72em;
+            color: #6c757d;
+            font-weight: 600;
+        }
+
+        .season-legend {
+            display: flex;
+            gap: 24px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88em;
+            color: #6c757d;
+        }
+
+        .legend-dot {
+            width: 14px; height: 14px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        /* ─── END DATA & ENVIRONMENT STYLES ──────────────────────── */
+
+        /* ─── ILLUSTRATIONS PAGE STYLES ──────────────────────────── */
+
+        .illus-viewer {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .illus-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Map toggle pill bar */
+        .map-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        .map-pill {
+            background: #ffffff;
+            border: 2px solid #dee2e6;
+            border-radius: 30px;
+            padding: 9px 20px;
+            font-size: 0.88em;
+            font-weight: 600;
+            color: #495057;
+            cursor: pointer;
+            transition: all 0.25s;
+            white-space: nowrap;
+        }
+
+        .map-pill:hover {
+            border-color: #1e3a5f;
+            color: #1e3a5f;
+            background: #f0f4f8;
+        }
+
+        .map-pill.active {
+            background: #1e3a5f;
+            border-color: #1e3a5f;
+            color: #ffd700;
+        }
+
+        /* Main display panel */
+        .map-display {
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 12px 48px rgba(0,0,0,0.12);
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+        }
+
+        .map-display-header {
+            padding: 22px 32px;
+            background: #1e3a5f;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .map-display-title {
+            font-size: 1.25em;
+            font-weight: 700;
+            color: #ffd700;
+            letter-spacing: -0.3px;
+        }
+
+        .map-counter {
+            font-size: 0.82em;
+            font-weight: 600;
+            color: rgba(255,255,255,0.55);
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+
+        .map-image-wrap {
+            position: relative;
+            background: #0a0f18;
+            line-height: 0;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-image-wrap img {
+            width: 100%;
+            max-height: 620px;
+            object-fit: contain;
+            display: block;
+            transition: opacity 0.35s ease;
+        }
+
+        .map-image-wrap img.fading {
+            opacity: 0;
+        }
+
+        .map-description-panel {
+            padding: 28px 32px;
+            border-top: 1px solid #e9ecef;
+            background: #f8f9fa;
+        }
+
+        .map-desc-label {
+            font-size: 0.72em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .map-desc-text {
+            font-size: 1.02em;
+            color: #495057;
+            line-height: 1.75;
+        }
+
+        .map-desc-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .desc-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            font-weight: 600;
+            background: #e9ecef;
+            color: #495057;
+        }
+
+        .desc-tag.soil  { background: #fef3c7; color: #92400e; }
+        .desc-tag.geo   { background: #dbeafe; color: #1e40af; }
+        .desc-tag.slope { background: #dcfce7; color: #166534; }
+        .desc-tag.feat  { background: #fce7f3; color: #9d174d; }
+
+        /* Prev / next arrows */
+        .map-nav-arrows {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 32px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .arrow-btn {
+            background: #ffffff;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 12px 28px;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #1e3a5f;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: none;
+        }
+
+        .arrow-btn:hover:not(:disabled) {
+            background: #1e3a5f;
+            border-color: #1e3a5f;
+            color: #ffd700;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30,58,95,0.2);
+        }
+
+        .arrow-btn:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .illus-progress {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .illus-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: #dee2e6;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .illus-dot.active {
+            background: #1e3a5f;
+            transform: scale(1.35);
+        }
+
+        /* ─── END ILLUSTRATIONS STYLES ───────────────────────────── */
+
+        @media (max-width: 1024px) {
+            .sidebar { width: 240px; }
+            .main-wrapper { margin-left: 240px; }
         }
 
         @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-
-            .main-wrapper {
-                margin-left: 0;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            header {
-                padding: 30px 20px;
-            }
-
-            .container {
-                padding: 30px 20px;
-            }
-
-            .controls {
-                flex-direction: column;
-            }
-
-            .nav-controls {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
+            .sidebar { width: 100%; height: auto; position: relative; }
+            .main-wrapper { margin-left: 0; }
+            h1 { font-size: 2em; }
+            header { padding: 30px 20px; }
+            .container { padding: 30px 20px; }
+            .controls { flex-direction: column; }
+            .nav-controls { width: 100%; justify-content: space-between; }
+            .team-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -646,6 +1129,12 @@
                 <a class="menu-item active" onclick="showPage('overview')">Overview</a>
                 <a class="menu-item" onclick="showPage('presentation1')">Main Presentation</a>
                 <a class="menu-item" onclick="showPage('presentation2')">Semantic Detection Methods</a>
+            </div>
+            <div class="menu-section">
+                <div class="menu-label">Data &amp; Environment</div>
+                <a class="menu-item" onclick="showPage('soil')">Soil Composition</a>
+                <a class="menu-item" onclick="showPage('microclimate')">Microclimate</a>
+                <a class="menu-item" onclick="showPage('illustrations')">Illustrations</a>
             </div>
             <div class="menu-section">
                 <div class="menu-label">About</div>
@@ -664,7 +1153,7 @@
                 <div class="header-meta">
                     <div class="meta-item">
                         <span class="meta-label">Partners:</span>
-                        <span>The Cropper Foundation & TTLAB</span>
+                        <span>The Cropper Foundation &amp; TTLAB</span>
                     </div>
                     <div class="meta-item">
                         <span class="meta-label">Technical Lead:</span>
@@ -675,7 +1164,8 @@
         </header>
 
         <div class="container">
-            <!-- Overview Page -->
+
+            <!-- ══ OVERVIEW PAGE ══════════════════════════════════════ -->
             <div id="overviewPage" class="page active">
                 <h2 class="page-title">Project Overview</h2>
                 <p class="page-description">Leveraging AI and drone technology to address critical agricultural challenges in Caribbean Small Island Developing States</p>
@@ -694,7 +1184,7 @@
                 </div>
             </div>
 
-            <!-- Presentation 1 Page -->
+            <!-- ══ PRESENTATION 1 PAGE ════════════════════════════════ -->
             <div id="presentation1Page" class="page">
                 <h2 class="page-title">The F.A.A.I.R. Project</h2>
                 <p class="page-description">Main project presentation and findings</p>
@@ -703,11 +1193,7 @@
                     <div class="progress-bar">
                         <div class="progress-fill" id="progressFill1"></div>
                     </div>
-                    
-                    <div id="slideShow1">
-                        <!-- Slides will be dynamically inserted here -->
-                    </div>
-
+                    <div id="slideShow1"></div>
                     <div class="controls">
                         <div class="nav-controls">
                             <button id="prevBtn1" onclick="changeSlide(1, -1)">← Previous</button>
@@ -718,13 +1204,10 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="keyboard-hint">
-                    Use arrow keys ← → or buttons to navigate
-                </div>
+                <div class="keyboard-hint">Use arrow keys ← → or buttons to navigate</div>
             </div>
 
-            <!-- Presentation 2 Page -->
+            <!-- ══ PRESENTATION 2 PAGE ════════════════════════════════ -->
             <div id="presentation2Page" class="page">
                 <h2 class="page-title">Semantic Detection Methods</h2>
                 <p class="page-description">A semantic approach to weed and water stress detection using drone video</p>
@@ -733,11 +1216,7 @@
                     <div class="progress-bar">
                         <div class="progress-fill" id="progressFill2"></div>
                     </div>
-                    
-                    <div id="slideShow2">
-                        <!-- Slides will be dynamically inserted here -->
-                    </div>
-
+                    <div id="slideShow2"></div>
                     <div class="controls">
                         <div class="nav-controls">
                             <button id="prevBtn2" onclick="changeSlide(2, -1)">← Previous</button>
@@ -748,20 +1227,336 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="keyboard-hint">
-                    Use arrow keys ← → or buttons to navigate
-                </div>
+                <div class="keyboard-hint">Use arrow keys ← → or buttons to navigate</div>
             </div>
 
-            <!-- Team Page -->
+            <!-- ══ SOIL COMPOSITION PAGE ══════════════════════════════ -->
+            <div id="soilPage" class="page">
+                <div class="env-header">
+                    <h2 class="page-title">Soil Composition</h2>
+                    <p class="page-description">How Trinidad's soil survey data — 14,341 polygons digitised from the 1971 UWI Land Capability Study — shaped FAAIR's crop selection strategy and water-stress detection thresholds</p>
+                </div>
+
+                <!-- Stat strip -->
+                <div class="stat-strip">
+                    <div class="stat-card blue">
+                        <div class="stat-value">14,341</div>
+                        <div class="stat-label">Soil polygons in the Trinidad survey</div>
+                    </div>
+                    <div class="stat-card green">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">Major soil zones analysed</div>
+                    </div>
+                    <div class="stat-card amber">
+                        <div class="stat-value">ET<sub style="font-size:0.6em">c</sub></div>
+                        <div class="stat-label">Crop evapotranspiration used to determine water-stress threshold</div>
+                    </div>
+                    <div class="stat-card red">
+                        <div class="stat-value">~50%</div>
+                        <div class="stat-label">Soil water depletion threshold triggering crop stress</div>
+                    </div>
+                    <div class="stat-card teal">
+                        <div class="stat-value">Clay–<br>Loam</div>
+                        <div class="stat-label">Dominant texture in FAAIR study plots</div>
+                    </div>
+                </div>
+
+                <!-- Soil zones -->
+                <div class="env-card">
+                    <div class="env-card-title">
+                        <div class="icon icon-brown">🌍</div>
+                        Soil Zone Classification &amp; Crop Suitability
+                    </div>
+                    <div class="env-card-subtitle">Mapped from the UWI / Ministry of Agriculture 1971 survey, digitised 2011–2012 in ArcGIS (Naparima 1955 datum)</div>
+
+                    <p>The soil survey divides Trinidad into three broad zones, each with distinct drainage characteristics, parent lithology, and suitability for smallholder crops. FAAIR field sites were deliberately selected to span at least two of these zones, allowing the machine-learning models to be trained on spectral signatures arising from different soil backgrounds — a critical step for building models that generalise beyond a single farm.</p>
+
+                    <table class="zone-table">
+                        <thead>
+                            <tr>
+                                <th>Zone</th>
+                                <th>Drainage Class</th>
+                                <th>Dominant Texture</th>
+                                <th>Parent Rock</th>
+                                <th>Crops Supported</th>
+                                <th>FAAIR Relevance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="zone-badge badge-upland">Upland</span></td>
+                                <td>Well-drained</td>
+                                <td>Clay loam / Sandy loam</td>
+                                <td>Sandstone, metamorphic</td>
+                                <td>Cocoa, coffee, dasheen, short-season vegetables</td>
+                                <td>Primary zone for weed and water-stress detection trials</td>
+                            </tr>
+                            <tr>
+                                <td><span class="zone-badge badge-terraced">Terraced</span></td>
+                                <td>Moderately well-drained</td>
+                                <td>Clay / Silty clay loam</td>
+                                <td>Limestone, marine deposits</td>
+                                <td>Citrus, pineapple, root crops</td>
+                                <td>Secondary zone; steeper slope class tested UAV stability</td>
+                            </tr>
+                            <tr>
+                                <td><span class="zone-badge badge-alluvial">Alluvial Plains &amp; Valley</span></td>
+                                <td>Poorly to imperfectly drained</td>
+                                <td>Heavy clay (Nariva / Caroni)</td>
+                                <td>Alluvium, marine clay</td>
+                                <td>Rice, sugar cane, taro</td>
+                                <td>Drainage-related false positives studied in NDWI analysis</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Drainage & erodability -->
+                <div class="env-card">
+                    <div class="env-card-title">
+                        <div class="icon icon-blue">💧</div>
+                        Drainage &amp; Erodability Findings
+                    </div>
+                    <div class="env-card-subtitle">Key patterns from the soil polygon attribute data (fields: drainage, pri_erosio, dom_slope)</div>
+
+                    <p>Drainage class directly influences how quickly precipitation infiltrates the root zone, which in turn determines how soon a crop transitions from adequate water supply into stress. Erodability — the susceptibility of a soil surface to runoff-driven particle detachment — affects slope wash and downstream sedimentation, both of which can degrade canopy reflectance signals captured by the drone's multispectral sensor.</p>
+
+                    <div class="two-col">
+                        <div class="info-block blue">
+                            <h4>Poorly-Drained Alluvial Clays</h4>
+                            <p>Soils such as Nariva Clay and Caroni Clay retain water for extended periods. These polygons produced persistently high NDWI values even during the dry season, requiring zone-specific calibration thresholds so the water-stress classifier would not misinterpret waterlogging as adequate hydration — a distinct physiological condition from genuine soil water depletion.</p>
+                        </div>
+                        <div class="info-block green">
+                            <h4>Well-Drained Upland Soils</h4>
+                            <p>Upland clay loams — such as Maracas Clay Loam and Palo Seco Clay — drain rapidly following rainfall, causing available soil water to fall below the critical depletion fraction within days. This faster cycling made upland plots the most responsive to the model's water-stress detection, and the best candidates for early-warning UAV monitoring.</p>
+                        </div>
+                        <div class="info-block teal">
+                            <h4>Slope &amp; Erodability Interaction</h4>
+                            <p>High primary erodability scores (fields <em>pri_erosio</em>) co-occurred with slopes above Class C (>15°) in the Northern Range foothills. Under heavy rainfall events, surface wash generated spectral noise in drone imagery. Flights were accordingly scheduled outside the first 48 hours following heavy rain to allow soil surfaces to stabilise.</p>
+                        </div>
+                        <div class="info-block red">
+                            <h4>Lithology &amp; Reflectance Baseline</h4>
+                            <p>Sandy soils derived from sandstone parent rock displayed markedly higher bare-soil reflectance in the near-infrared band compared to dark metamorphic-derived clays. This lithology-driven baseline shift was accounted for by normalising vegetation indices to soil-adjusted variants (SAVI) within each polygon's dominant lithology class.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evapotranspiration & water stress -->
+                <div class="env-card">
+                    <div class="env-card-title">
+                        <div class="icon icon-amber">📐</div>
+                        Evapotranspiration &amp; Soil Water Calculations
+                    </div>
+                    <div class="env-card-subtitle">Determining the point of water stress using a crop evapotranspiration and soil water balance approach</div>
+
+                    <p>To give the AI model a physically grounded target, FAAIR used a crop evapotranspiration and soil water balance approach to calculate, for each soil type, the threshold at which available water in the root zone drops low enough to restrict crop evapotranspiration — the point of measurable water stress. This threshold was then cross-referenced with spectral index values observed at drone survey time to validate that changes in NDWI, NDVI and NDRE corresponded to known physiological stress events.</p>
+
+                    <div class="formula-box">
+                        <span class="formula-label">// Crop Evapotranspiration &amp; Soil Water Balance — Core Equations</span>
+                        ET<sub>c</sub> = K<sub>c</sub> × ET<sub>0</sub><br>
+                        ET<sub>c adj</sub> = K<sub>s</sub> × K<sub>c</sub> × ET<sub>0</sub><br>
+                        D<sub>r,i</sub> = D<sub>r,i-1</sub> − (P<sub>i</sub> − RO<sub>i</sub>) − I<sub>i</sub> + ET<sub>c,i</sub> + DP<sub>i</sub><br>
+                        K<sub>s</sub> = (TAW − D<sub>r</sub>) / ((1 − p) × TAW)
+                        <div class="var-row">
+                            ET<sub>0</sub> = Reference evapotranspiration (Penman-Monteith, mm/day) &nbsp;·&nbsp;
+                            K<sub>c</sub> = Crop coefficient &nbsp;·&nbsp;
+                            K<sub>s</sub> = Water stress coefficient (0–1) &nbsp;·&nbsp;
+                            TAW = Total available water in root zone (mm) &nbsp;·&nbsp;
+                            D<sub>r</sub> = Root zone depletion (mm) &nbsp;·&nbsp;
+                            p = Fraction of TAW that can be depleted before stress (≈ 0.50 for most crops)
+                        </div>
+                    </div>
+
+                    <div class="two-col">
+                        <div class="info-block blue">
+                            <h4>TAW by Soil Texture</h4>
+                            <p>Total Available Water was estimated from field capacity (θ<sub>FC</sub>) and wilting point (θ<sub>WP</sub>) values assigned per soil type in the survey. Clay-loam upland soils yielded TAW values of approximately 150–180 mm/m, whereas sandy loams in terraced zones yielded 90–120 mm/m — meaning sandy plots reached the stress threshold roughly 30–40% faster under equivalent atmospheric demand.</p>
+                        </div>
+                        <div class="info-block green">
+                            <h4>Crop Coefficients (K<sub>c</sub>)</h4>
+                            <p>K<sub>c</sub> values were assigned for the primary monitored crops: pepper and bodi (cowpea). Mid-season K<sub>c</sub> values of 1.05 (pepper) and 1.15 (cowpea) were used for the main canopy-development stage captured during drone surveys, adjusted downward for end-of-season senescence to prevent false positive stress flags from normal crop maturation.</p>
+                        </div>
+                        <div class="info-block teal">
+                            <h4>Stress Coefficient K<sub>s</sub> → Spectral Signal</h4>
+                            <p>When K<sub>s</sub> fell below 1.0 (i.e., D<sub>r</sub> exceeded p × TAW), ground-truth measurements confirmed declining NDWI and a characteristic red-edge shift detectable in NDRE imagery. This provided the labelled ground-truth signal used to train the CNN and SVM classifiers, directly linking the soil water balance to drone-observable spectral features.</p>
+                        </div>
+                        <div class="info-block">
+                            <h4>Depletion Monitoring &amp; Survey Timing</h4>
+                            <p>Daily D<sub>r</sub> was tracked throughout each experimental season using on-site rain gauges and CHIRPS rainfall estimates. UAV surveys were timed to coincide with three soil-water states: well-watered (D<sub>r</sub> &lt; 25% TAW), approaching stress (D<sub>r</sub> = 40–55% TAW), and confirmed stress (D<sub>r</sub> &gt; 60% TAW), creating a stratified spectral dataset across all water-availability conditions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ══ END SOIL PAGE ══════════════════════════════════════ -->
+
+
+            <!-- ══ MICROCLIMATE PAGE ══════════════════════════════════ -->
+            <div id="microclimatePage" class="page">
+                <div class="env-header">
+                    <h2 class="page-title">Microclimate</h2>
+                    <p class="page-description">How Trinidad's rainfall patterns, humidity regimes, and local atmospheric conditions shaped the FAAIR sensing strategy and influenced water-stress detection outcomes</p>
+                </div>
+
+                <!-- Stat strip -->
+                <div class="stat-strip">
+                    <div class="stat-card blue">
+                        <div class="stat-value">2,000<span style="font-size:0.55em">mm</span></div>
+                        <div class="stat-label">Mean annual rainfall, northern Trinidad</div>
+                    </div>
+                    <div class="stat-card green">
+                        <div class="stat-value">7</div>
+                        <div class="stat-label">Wet-season months (June – December)</div>
+                    </div>
+                    <div class="stat-card amber">
+                        <div class="stat-value">85–95<span style="font-size:0.55em">%</span></div>
+                        <div class="stat-label">Typical morning relative humidity</div>
+                    </div>
+                    <div class="stat-card red">
+                        <div class="stat-value">27°C</div>
+                        <div class="stat-label">Mean annual temperature (low variability)</div>
+                    </div>
+                    <div class="stat-card teal">
+                        <div class="stat-value">&lt;15<span style="font-size:0.55em">km/h</span></div>
+                        <div class="stat-label">Wind threshold for safe UAV operations</div>
+                    </div>
+                </div>
+
+                <!-- Rainfall -->
+                <div class="env-card">
+                    <div class="env-card-title">
+                        <div class="icon icon-blue">🌧</div>
+                        Rainfall &amp; Humidity Patterns
+                    </div>
+                    <div class="env-card-subtitle">Trinidad's bimodal seasonality and its implications for soil water dynamics and crop stress windows</div>
+
+                    <p>Trinidad lies approximately 11°N of the equator, placing it just outside the main hurricane belt but firmly within the Inter-Tropical Convergence Zone (ITCZ) influence. This produces a strongly bimodal rainfall regime: a main wet season from June through December, a short dry season from January through May, and a brief mid-summer dry spell ("Petit Carême") in late September–October. Understanding this seasonality was foundational to FAAIR's monitoring calendar — water-stress events are most likely to occur and most impactful to yield during the dry season and the Petit Carême window.</p>
+
+                    <!-- Rainfall bar chart -->
+                    <div style="margin-top: 28px;">
+                        <div style="font-size: 0.85em; font-weight: 600; color: #6c757d; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px;">Monthly Rainfall Pattern — Central Trinidad (indicative, mm)</div>
+                        <div class="season-bar" id="rainfallBar"></div>
+                        <div class="season-legend">
+                            <div class="legend-item">
+                                <div class="legend-dot" style="background:#3b82f6;"></div>
+                                Wet season (high recharge, low stress risk)
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot" style="background:#f59e0b;"></div>
+                                Transition / Petit Carême
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot" style="background:#ef4444;"></div>
+                                Dry season (primary stress window)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="two-col" style="margin-top:28px;">
+                        <div class="info-block blue">
+                            <h4>Humidity &amp; Atmospheric Demand</h4>
+                            <p>High relative humidity (85–95% in the morning, falling to 65–75% by mid-afternoon) suppresses vapour pressure deficit, which in turn reduces reference evapotranspiration (ET₀) compared to arid regions. This means the daily depletion rate of soil water is lower, and the crop can tolerate slightly longer intervals between irrigation. However, the combination of high humidity and warmth also promotes fungal pathogens, making crop health monitoring — not just water stress — a priority use case for FAAIR's drone surveys.</p>
+                        </div>
+                        <div class="info-block green">
+                            <h4>Dry Season Stress Windows</h4>
+                            <p>January through May represents the critical monitoring window. During pronounced dry seasons — particularly in El Niño years, when the ITCZ retreats further south — monthly rainfall can fall below 50 mm for two or three consecutive months across the central plains. FAAIR surveys were concentrated in this period to capture the full spectrum from early stress (yellowing, reduced NDRE) through to severe depletion (wilting, marked NDWI decline), building the most informative portion of the training dataset.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How microclimate influenced water stress detection -->
+                <div class="env-card">
+                    <div class="env-card-title">
+                        <div class="icon icon-amber">📡</div>
+                        How Microclimate Influenced Water Stress Detection
+                    </div>
+                    <div class="env-card-subtitle">Atmospheric and thermal effects on multispectral drone imagery and model calibration</div>
+
+                    <p>Microclimate does not just determine when stress occurs — it directly affects the quality and interpretability of the spectral signal the drone captures. Several climate-driven sources of error had to be identified and mitigated before reliable machine-learning inference was possible.</p>
+
+                    <div class="two-col">
+                        <div class="info-block blue">
+                            <h4>Atmospheric Haze &amp; Path Radiance</h4>
+                            <p>High humidity increases aerosol scattering, which adds a wavelength-dependent haze component to the sensor's incoming radiance. This path radiance artificially elevates near-infrared reflectance and depresses red-band values, mimicking a healthier-canopy signature. Empirical line calibration using ground-based reflectance targets was performed at each flight to remove this offset before computing vegetation indices.</p>
+                        </div>
+                        <div class="info-block green">
+                            <h4>Thermal Stratification &amp; Heat Shimmer</h4>
+                            <p>On clear dry-season afternoons, strong surface heating over bare-soil patches creates convective cells that cause image blur ("heat shimmer") in low-altitude passes below 30 m AGL. Flights were therefore planned for the 07:00–10:00 window when boundary layer mixing is minimal, surface temperatures are within 2–4°C of air temperature, and atmospheric stability produces the sharpest imagery for per-pixel classification.</p>
+                        </div>
+                        <div class="info-block teal">
+                            <h4>Canopy Temperature as a Proxy</h4>
+                            <p>Stressed plants close their stomata to conserve water, reducing transpirational cooling and causing canopy temperature to rise above air temperature. The thermal infrared band on the drone sensor was calibrated against air temperature logged by on-site weather stations during each flight. A canopy-to-air temperature differential (ΔT) exceeding +2°C provided a secondary, physics-based validation layer for the water-stress labels assigned by the spectral model.</p>
+                        </div>
+                        <div class="info-block red">
+                            <h4>Cloud-Shadow Contamination</h4>
+                            <p>Cumulus clouds are common over Trinidad even in the dry season, particularly after 10:00 local time as surface heating drives convective development. Shadow passages during a drone survey produced abrupt, scan-line-level drops in all spectral bands — most severe in the visible and SWIR channels — that could be misclassified as dense canopy or stressed areas. A cloud-shadow mask was computed from co-registered RGB orthomosaics and applied prior to index calculation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UAV flight conditions -->
+                <div class="env-card">
+                    <div class="env-card-title">
+                        <div class="icon icon-green">🚁</div>
+                        UAV Flight Condition Considerations
+                    </div>
+                    <div class="env-card-subtitle">Operational parameters derived from Trinidad's climate profile to ensure data quality and flight safety</div>
+
+                    <p>Translating scientific ambition into reliable field data required a detailed flight protocol calibrated to Trinidad's microclimate. The following operational thresholds were developed over multiple field seasons and codified into the FAAIR flight checklist, ensuring that each survey collected imagery of sufficient quality to feed the machine-learning pipeline.</p>
+
+                    <div class="condition-grid">
+                        <div class="condition-card ok">
+                            <div class="condition-label">✔ Go condition</div>
+                            <h4>Wind Speed &lt; 15 km/h</h4>
+                            <p>Trade winds are light and variable in the early morning. Sustained winds below 15 km/h ensure stable hover, consistent overlap between image strips, and accurate georeferencing from the onboard RTK GPS.</p>
+                        </div>
+                        <div class="condition-card ok">
+                            <div class="condition-label">✔ Go condition</div>
+                            <h4>Cloud Cover &lt; 30%</h4>
+                            <p>Partially cloudy skies are acceptable provided no active cloud shadows cross the survey area during the flight window. A sky-scan check is performed 10 minutes before take-off. Breaks in cover of ≥ 20 minutes are targeted.</p>
+                        </div>
+                        <div class="condition-card ok">
+                            <div class="condition-label">✔ Go condition</div>
+                            <h4>Flight Window 07:00–10:00</h4>
+                            <p>Solar elevation between 25° and 55° provides adequate illumination while avoiding the specular reflection peak that occurs at high solar angles over wet leaf surfaces. This window also precedes peak convective cloud development.</p>
+                        </div>
+                        <div class="condition-card caution">
+                            <div class="condition-label">⚠ Caution</div>
+                            <h4>Post-Rain Delay ≥ 48 h</h4>
+                            <p>Soil and leaf surfaces remain wet for 24–48 hours after rainfall, causing elevated near-infrared reflectance that masks stress signals. Surveys conducted within this window require a wet-surface flag and may not be suitable for primary water-stress inference.</p>
+                        </div>
+                        <div class="condition-card caution">
+                            <div class="condition-label">⚠ Caution</div>
+                            <h4>Relative Humidity &gt; 90%</h4>
+                            <p>Very high humidity increases path radiance correction uncertainty. Surveys in these conditions proceed but require additional reflectance panel captures at the start and end of the mission to bracket atmospheric changes across the flight duration.</p>
+                        </div>
+                        <div class="condition-card stop">
+                            <div class="condition-label">✗ No-fly</div>
+                            <h4>Active Precipitation</h4>
+                            <p>All flights are suspended during rainfall. In addition to airframe safety, wet optics on the multispectral sensor introduce spectral artefacts that cannot be corrected in post-processing. The mission is rescheduled to the next qualifying morning window.</p>
+                        </div>
+                        <div class="condition-card stop">
+                            <div class="condition-label">✗ No-fly</div>
+                            <h4>Wind Gusts &gt; 25 km/h</h4>
+                            <p>Gusty conditions cause attitude oscillations that degrade image overlap and introduce motion blur. These conditions are most common in the late dry season when northerly troughs push trade wind surges across the island.</p>
+                        </div>
+                        <div class="condition-card ok">
+                            <div class="condition-label">✔ Best practice</div>
+                            <h4>Ground Control Points (GCPs)</h4>
+                            <p>A minimum of five GCPs were deployed per study plot, positioned to span the full extent of the survey area. In humid tropical environments, vegetation growth between surveys can shift apparent ground positions; GCPs were re-surveyed with RTK GPS at each campaign to maintain sub-10 cm georeferencing accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ══ END MICROCLIMATE PAGE ══════════════════════════════ -->
+
+
+            <!-- ══ TEAM PAGE ══════════════════════════════════════════ -->
             <div id="teamPage" class="page">
                 <div class="team-section">
                     <div class="team-header">
                         <h2 class="page-title">Project Team</h2>
                         <p class="page-description">Meet the researchers and partners behind FAAIR</p>
                     </div>
-                    
                     <div class="team-grid">
                         <div class="team-member">
                             <div class="team-content">
@@ -772,7 +1567,6 @@
                             </div>
                             <a href="https://www.linkedin.com/in/phosein/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
                         </div>
-                        
                         <div class="team-member">
                             <div class="team-content">
                                 <h3>Omar Mohammed</h3>
@@ -781,7 +1575,6 @@
                             </div>
                             <a href="https://www.linkedin.com/in/omar-h-mohammed/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
                         </div>
-                        
                         <div class="team-member">
                             <div class="team-content">
                                 <h3>Mindy Mohammed</h3>
@@ -792,7 +1585,6 @@
                             </div>
                             <a href="https://www.linkedin.com/in/fazeeia-mohammed/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
                         </div>
-                        
                         <div class="team-member">
                             <div class="team-content">
                                 <h3>Keanu Nichols</h3>
@@ -801,7 +1593,6 @@
                             </div>
                             <a href="https://www.linkedin.com/in/keanu-nichols/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
                         </div>
-                        
                         <div class="team-member">
                             <div class="team-content">
                                 <h3>Roganci Fontelera</h3>
@@ -811,7 +1602,6 @@
                             </div>
                             <a href="https://www.linkedin.com/in/roganci-fontelera-11b33221b/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
                         </div>
-                        
                         <div class="team-member">
                             <div class="team-content">
                                 <h3>Jade Chattergoon</h3>
@@ -821,7 +1611,6 @@
                             </div>
                             <a href="https://www.linkedin.com/in/jade-persad-03445486/" target="_blank" class="linkedin-link">LinkedIn Profile</a>
                         </div>
-                        
                         <div class="team-member">
                             <div class="team-content">
                                 <h3>Aqeel Mohammed</h3>
@@ -834,14 +1623,13 @@
                 </div>
             </div>
 
-            <!-- Partners Page -->
+            <!-- ══ PARTNERS PAGE ══════════════════════════════════════ -->
             <div id="partnersPage" class="page">
                 <div class="team-section">
                     <div class="team-header">
                         <h2 class="page-title">Partner Organizations</h2>
                         <p class="page-description">Collaborating to advance AI for climate-smart agriculture</p>
                     </div>
-                    
                     <div class="partners">
                         <div class="partner">
                             <img src="data/c/microsoft.png" alt="Microsoft" onerror="this.style.display='none'">
@@ -867,14 +1655,13 @@
                 </div>
             </div>
 
-            <!-- Resources Page -->
+            <!-- ══ RESOURCES PAGE ═════════════════════════════════════ -->
             <div id="resourcesPage" class="page">
                 <div class="resources-section">
                     <div class="team-header">
                         <h2 class="page-title">Project Resources</h2>
                         <p class="page-description">Learn more about FAAIR and access project information</p>
                     </div>
-                    
                     <div class="resource-card">
                         <h3>FAAIR Project Objectives</h3>
                         <p>The FAAIR project aims to revolutionize smallholder agriculture in the Caribbean through advanced AI technology:</p>
@@ -885,7 +1672,6 @@
                             <li>Support the adoption of AI for climate-smart agriculture in the Caribbean region</li>
                         </ul>
                     </div>
-
                     <div class="resource-card">
                         <h3>Grant Recognition</h3>
                         <p>The FAAIR project has received prestigious grants from multiple organizations, demonstrating the significance and potential impact of this work:</p>
@@ -894,13 +1680,11 @@
                         <strong>• NVIDIA Grant Support</strong></p>
                         <a href="https://lab.tt/index.php/grants/" target="_blank" class="resource-link">View Grant Details</a>
                     </div>
-
                     <div class="resource-card">
                         <h3>Development Lab</h3>
                         <p>Learn more about the Data for Development initiative at The Cropper Foundation, which houses the FAAIR project and other innovative agricultural technology solutions.</p>
                         <a href="https://thecropperfoundation.org/project/data-for-development/" target="_blank" class="resource-link">Visit Development Lab</a>
                     </div>
-
                     <div class="resource-card">
                         <h3>Featured Article</h3>
                         <p>Read about how a Trinidadian professor and NGO received the National Geographic Society grant to advance artificial intelligence in agriculture and transform farming practices in the Caribbean.</p>
@@ -908,78 +1692,91 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
+            <!-- ══ ILLUSTRATIONS PAGE ════════════════════════════════ -->
+            <div id="illustrationsPage" class="page">
+                <div class="illus-header">
+                    <h2 class="page-title">Soil Map Illustrations</h2>
+                    <p class="page-description">Thematic maps derived from Trinidad's 14,341-polygon soil survey, used in FAAIR to contextualise field sites, calibrate spectral models, and explain spatial variation in water-stress detection results</p>
+                </div>
+
+                <div class="illus-viewer">
+                    <!-- Pill toggle bar -->
+                    <div class="map-nav" id="mapPills"></div>
+
+                    <!-- Main viewer card -->
+                    <div class="map-display">
+                        <div class="map-display-header">
+                            <div class="map-display-title" id="illusTitle">Loading…</div>
+                            <div class="map-counter" id="illusCounter">1 / 9</div>
+                        </div>
+                        <div class="map-image-wrap">
+                            <img id="illusImg" src="" alt="Soil map" />
+                        </div>
+                        <div class="map-description-panel">
+                            <div class="map-desc-label">About this map</div>
+                            <div class="map-desc-text" id="illusDesc"></div>
+                            <div class="map-desc-tags" id="illusTags"></div>
+                        </div>
+                        <div class="map-nav-arrows">
+                            <button class="arrow-btn" id="illusPrev" onclick="stepIllus(-1)">← Previous</button>
+                            <div class="illus-progress" id="illusDots"></div>
+                            <button class="arrow-btn" id="illusNext" onclick="stepIllus(1)">Next →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ══ END ILLUSTRATIONS PAGE ════════════════════════════ -->
+
+        </div><!-- /.container -->
+    </div><!-- /.main-wrapper -->
 
     <script>
+        /* ── Presentation data ────────────────────────────────────────── */
         const presentations = {
-            1: {
-                currentSlide: 0,
-                folder: 'a',
-                totalSlides: 23,
-                filePattern: (i) => `332023-${i}.png`
-            },
-            2: {
-                currentSlide: 0,
-                folder: 'b',
-                totalSlides: 15,
-                filePattern: (i) => `WaterStress and Weed Detection-${i}.png`
-            }
+            1: { currentSlide: 0, folder: 'a', totalSlides: 23, filePattern: (i) => `332023-${i}.png` },
+            2: { currentSlide: 0, folder: 'b', totalSlides: 15, filePattern: (i) => `WaterStress and Weed Detection-${i}.png` }
         };
 
+        /* ── Page navigation ──────────────────────────────────────────── */
         function showPage(pageName) {
-            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-            document.querySelectorAll('.menu-item').forEach(btn => btn.classList.remove('active'));
-            
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.menu-item').forEach(b => b.classList.remove('active'));
+
             const pages = {
-                'overview': 'overviewPage',
-                'presentation1': 'presentation1Page',
-                'presentation2': 'presentation2Page',
-                'team': 'teamPage',
-                'partners': 'partnersPage',
-                'resources': 'resourcesPage'
+                'overview':       'overviewPage',
+                'presentation1':  'presentation1Page',
+                'presentation2':  'presentation2Page',
+                'soil':           'soilPage',
+                'microclimate':   'microclimatePage',
+                'illustrations':  'illustrationsPage',
+                'team':           'teamPage',
+                'partners':       'partnersPage',
+                'resources':      'resourcesPage'
             };
-            
+
             document.getElementById(pages[pageName]).classList.add('active');
-            
+
+            const pageOrder = ['overview','presentation1','presentation2','soil','microclimate','illustrations','team','partners','resources'];
             const menuItems = document.querySelectorAll('.menu-item');
-            const pageOrder = ['overview', 'presentation1', 'presentation2', 'team', 'partners', 'resources'];
-            const index = pageOrder.indexOf(pageName);
-            if (index !== -1) {
-                menuItems[index].classList.add('active');
-            }
+            const idx = pageOrder.indexOf(pageName);
+            if (idx !== -1) menuItems[idx].classList.add('active');
         }
 
+        /* ── Slide engine ─────────────────────────────────────────────── */
         function generateSlides(presentationNum) {
             const pres = presentations[presentationNum];
             const slideShow = document.getElementById(`slideShow${presentationNum}`);
             slideShow.innerHTML = '';
-            
             for (let i = 1; i <= pres.totalSlides; i++) {
                 const slide = document.createElement('div');
-                slide.className = 'slide';
-                if (i === 1) slide.classList.add('active');
-                
+                slide.className = 'slide' + (i === 1 ? ' active' : '');
                 const img = document.createElement('img');
-                const fileName = pres.filePattern(i);
-                img.src = `data/${pres.folder}/${fileName}`;
+                img.src = `data/${pres.folder}/${pres.filePattern(i)}`;
                 img.alt = `Slide ${i}`;
-                img.onerror = function() {
-                    this.alt = `Image not found: data/${pres.folder}/${fileName}`;
-                    this.style.padding = '40px';
-                    this.style.background = '#f0f0f0';
-                    this.style.color = '#333';
-                    this.style.textAlign = 'center';
-                    this.style.minHeight = '400px';
-                    this.style.display = 'flex';
-                    this.style.alignItems = 'center';
-                    this.style.justifyContent = 'center';
-                };
-                
                 slide.appendChild(img);
                 slideShow.appendChild(slide);
             }
-            
             pres.currentSlide = 0;
             showSlide(presentationNum, 0);
         }
@@ -987,48 +1784,189 @@
         function showSlide(presentationNum, n) {
             const pres = presentations[presentationNum];
             const slides = document.querySelectorAll(`#slideShow${presentationNum} .slide`);
-            if (slides.length === 0) return;
-            
+            if (!slides.length) return;
             slides.forEach(s => s.classList.remove('active'));
             pres.currentSlide = Math.max(0, Math.min(n, pres.totalSlides - 1));
             slides[pres.currentSlide].classList.add('active');
-            
             document.getElementById(`currentSlide${presentationNum}`).textContent = pres.currentSlide + 1;
             document.getElementById(`totalSlides${presentationNum}`).textContent = pres.totalSlides;
             document.getElementById(`prevBtn${presentationNum}`).disabled = pres.currentSlide === 0;
             document.getElementById(`nextBtn${presentationNum}`).disabled = pres.currentSlide === pres.totalSlides - 1;
-            
-            const progress = ((pres.currentSlide + 1) / pres.totalSlides) * 100;
-            document.getElementById(`progressFill${presentationNum}`).style.width = progress + '%';
+            const pct = ((pres.currentSlide + 1) / pres.totalSlides) * 100;
+            document.getElementById(`progressFill${presentationNum}`).style.width = pct + '%';
         }
 
         function changeSlide(presentationNum, direction) {
-            const pres = presentations[presentationNum];
-            showSlide(presentationNum, pres.currentSlide + direction);
+            showSlide(presentationNum, presentations[presentationNum].currentSlide + direction);
         }
 
-        // Keyboard navigation
+        /* ── Keyboard nav ─────────────────────────────────────────────── */
         document.addEventListener('keydown', (e) => {
-            if (document.getElementById('presentation1Page').classList.contains('active')) {
-                const pres = presentations[1];
-                if (e.key === 'ArrowLeft' && pres.currentSlide > 0) {
-                    changeSlide(1, -1);
-                } else if (e.key === 'ArrowRight' && pres.currentSlide < pres.totalSlides - 1) {
-                    changeSlide(1, 1);
+            [1, 2].forEach(n => {
+                if (document.getElementById(`presentation${n}Page`).classList.contains('active')) {
+                    const pres = presentations[n];
+                    if (e.key === 'ArrowLeft' && pres.currentSlide > 0) changeSlide(n, -1);
+                    if (e.key === 'ArrowRight' && pres.currentSlide < pres.totalSlides - 1) changeSlide(n, 1);
                 }
-            } else if (document.getElementById('presentation2Page').classList.contains('active')) {
-                const pres = presentations[2];
-                if (e.key === 'ArrowLeft' && pres.currentSlide > 0) {
-                    changeSlide(2, -1);
-                } else if (e.key === 'ArrowRight' && pres.currentSlide < pres.totalSlides - 1) {
-                    changeSlide(2, 1);
-                }
+            });
+        });
+
+        /* ── Rainfall bar chart ───────────────────────────────────────── */
+        (function buildRainfallChart() {
+            // Indicative monthly rainfall (mm) for central Trinidad
+            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            const rain =   [66,   46,   58,   94,   155, 208,  210, 218,  175,  170,  170,  125];
+            const colours = [
+                '#ef4444','#ef4444','#ef4444','#f59e0b','#f59e0b',
+                '#3b82f6','#3b82f6','#3b82f6','#f59e0b',
+                '#3b82f6','#3b82f6','#3b82f6'
+            ];
+            const max = Math.max(...rain);
+            const bar = document.getElementById('rainfallBar');
+            if (!bar) return;
+            months.forEach((m, i) => {
+                const h = Math.round((rain[i] / max) * 140);
+                bar.innerHTML += `
+                    <div class="month-col">
+                        <div class="month-fill" style="height:${h}px;background:${colours[i]};opacity:0.85;"></div>
+                        <div class="month-label">${m}</div>
+                        <div style="font-size:0.68em;color:#9ca3af;margin-top:2px;">${rain[i]}</div>
+                    </div>`;
+            });
+        })();
+
+        /* ── Illustrations data & engine ─────────────────────────── */
+        const ILLUS_MAPS = [
+            {
+                file:  'maps/map_overview.png',
+                title: 'Overview — All Polygons',
+                desc:  'A full-island rendering of all 14,341 soil polygons in the Trinidad survey, coloured by polygon boundary. This base map was used during the FAAIR site-selection phase to ensure field plots were distributed across structurally distinct soil areas rather than clustered within a single zone, improving the geographic generalisability of the trained models.',
+                tags:  [{ label: 'Base map', cls: 'soil' }]
+            },
+            {
+                file:  'maps/map_soil_zones.png',
+                title: 'Soil Zones',
+                desc:  'Broad classification of Trinidad into three zones — Upland, Terraced, and Alluvial Plains & Valley — based on formation and drainage character. FAAIR study plots were intentionally placed in the Upland and Terraced zones where soil-water drawdown is faster and water-stress events are more pronounced, while Alluvial Clay sites provided contrast data for the false-positive analysis.',
+                tags:  [{ label: 'Zones', cls: 'soil' }, { label: 'Site selection', cls: 'geo' }]
+            },
+            {
+                file:  'maps/map_soil_groups.png',
+                title: 'Soil Groups',
+                desc:  'A finer subdivision of each zone into named soil groups differentiated by drainage and permeability characteristics. Soil group boundaries were overlaid on drone flight plans to flag areas where abrupt textural transitions — such as the boundary between well-drained clay loam and imperfectly drained clay — could cause within-plot spectral heterogeneity unrelated to crop water status.',
+                tags:  [{ label: 'Drainage', cls: 'geo' }, { label: 'Calibration', cls: 'soil' }]
+            },
+            {
+                file:  'maps/map_soil_types.png',
+                title: 'Soil Types',
+                desc:  'Named soil types (e.g. Maracas Clay Loam, Nariva Clay, Palo Seco Clay) mapped at the most detailed survey resolution. Total Available Water (TAW) and wilting point values were assigned per soil type to parameterise the crop evapotranspiration water balance, which in turn defined the depletion threshold at which FAAIR classifiers were trained to recognise water-stress spectral signatures.',
+                tags:  [{ label: 'Soil types', cls: 'soil' }, { label: 'ET modelling', cls: 'geo' }]
+            },
+            {
+                file:  'maps/map_drainage_&_permeability.png',
+                title: 'Drainage & Permeability',
+                desc:  'Drainage class ranges from well-drained upland soils — which deplete root-zone water rapidly and respond quickly to irrigation deficits — through to poorly-drained alluvial clays that retain excess moisture long after rainfall. Poorly-drained polygons were assigned zone-specific NDWI calibration thresholds because their persistent high soil-moisture signal could otherwise be confused with healthy (non-stressed) crop canopy reflectance.',
+                tags:  [{ label: 'Drainage', cls: 'geo' }, { label: 'NDWI calibration', cls: 'soil' }]
+            },
+            {
+                file:  'maps/map_lithology_parent_rock.png',
+                title: 'Lithology (Parent Rock)',
+                desc:  'The parent rock from which each soil was derived — sandstone, limestone, metamorphic, and alluvium — controls bare-soil reflectance in the near-infrared. Sandy soils over sandstone showed markedly higher NIR baseline values than dark metamorphic-derived clays. This map informed the choice to apply Soil-Adjusted Vegetation Index (SAVI) rather than standard NDVI across lithologically distinct polygons, preventing rock-type background effects from biasing the vegetation signal.',
+                tags:  [{ label: 'Lithology', cls: 'geo' }, { label: 'SAVI adjustment', cls: 'slope' }]
+            },
+            {
+                file:  'maps/map_dominant_slope_class.png',
+                title: 'Dominant Slope Class',
+                desc:  'Slope class across each polygon, ranging from near-flat valley floors through moderately sloped terraces to steep Northern Range hillsides. Steeper slopes introduced geometric distortion in drone orthomosaics and contributed to surface wash after heavy rain, which temporarily elevated soil-reflectance noise. This map was used to schedule post-rain wait periods (minimum 48 hours on slopes above Class C) before conducting UAV surveys.',
+                tags:  [{ label: 'Slope', cls: 'slope' }, { label: 'Flight planning', cls: 'feat' }]
+            },
+            {
+                file:  'maps/map_primary_erodability.png',
+                title: 'Primary Erodability',
+                desc:  'The susceptibility of each polygon\'s dominant soil to erosion under rainfall and runoff. High erodability scores co-occur with steep slopes in the Northern Range foothills, where surface wash can redistribute fine particles and alter canopy reflectance. The erodability layer was combined with the slope map to identify polygons where image quality was most likely to be compromised by surface disturbance, guiding post-processing quality checks.',
+                tags:  [{ label: 'Erosion', cls: 'slope' }, { label: 'Image quality', cls: 'geo' }]
+            },
+            {
+                file:  'maps/map_special_features.png',
+                title: 'Special Features (Water / Urban / Oil)',
+                desc:  'Polygons flagged as water bodies, urban areas, or oil fields — non-agricultural land uses that were excluded from all FAAIR model training and inference. Waterlogged swamp areas in particular produce spectral signatures that could be confused with irrigated or well-watered cropland; masking these features before computing vegetation indices prevented false-negative stress classifications in adjacent agricultural plots.',
+                tags:  [{ label: 'Masking', cls: 'feat' }, { label: 'Exclusion zones', cls: 'geo' }]
+            }
+        ];
+
+        let illusIdx = 0;
+
+        function buildIllusPills() {
+            const nav = document.getElementById('mapPills');
+            const dots = document.getElementById('illusDots');
+            nav.innerHTML = '';
+            dots.innerHTML = '';
+            ILLUS_MAPS.forEach((m, i) => {
+                // Pill
+                const pill = document.createElement('button');
+                pill.className = 'map-pill' + (i === 0 ? ' active' : '');
+                pill.textContent = m.title;
+                pill.onclick = () => goIllus(i);
+                nav.appendChild(pill);
+                // Dot
+                const dot = document.createElement('div');
+                dot.className = 'illus-dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => goIllus(i);
+                dots.appendChild(dot);
+            });
+        }
+
+        function goIllus(idx) {
+            illusIdx = idx;
+            const m = ILLUS_MAPS[idx];
+            const img = document.getElementById('illusImg');
+
+            // Fade transition
+            img.classList.add('fading');
+            setTimeout(() => {
+                img.src = m.file;
+                img.alt = m.title;
+                img.classList.remove('fading');
+            }, 200);
+
+            document.getElementById('illusTitle').textContent = m.title;
+            document.getElementById('illusCounter').textContent = `${idx + 1} / ${ILLUS_MAPS.length}`;
+            document.getElementById('illusDesc').textContent = m.desc;
+
+            // Tags
+            const tagsEl = document.getElementById('illusTags');
+            tagsEl.innerHTML = m.tags.map(t =>
+                `<span class="desc-tag ${t.cls}">${t.label}</span>`
+            ).join('');
+
+            // Pills
+            document.querySelectorAll('.map-pill').forEach((p, i) =>
+                p.classList.toggle('active', i === idx));
+            document.querySelectorAll('.illus-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === idx));
+
+            // Arrow state
+            document.getElementById('illusPrev').disabled = idx === 0;
+            document.getElementById('illusNext').disabled = idx === ILLUS_MAPS.length - 1;
+        }
+
+        function stepIllus(dir) {
+            const next = illusIdx + dir;
+            if (next >= 0 && next < ILLUS_MAPS.length) goIllus(next);
+        }
+
+        // Keyboard nav for illustrations
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('illustrationsPage').classList.contains('active')) {
+                if (e.key === 'ArrowLeft')  stepIllus(-1);
+                if (e.key === 'ArrowRight') stepIllus(1);
             }
         });
 
-        // Initialize
+        /* ── Init ─────────────────────────────────────────────────────── */
         generateSlides(1);
         generateSlides(2);
+        buildIllusPills();
+        goIllus(0);
     </script>
 </body>
 </html>
