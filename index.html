@@ -1449,32 +1449,28 @@
                         </div>
                     </div>
                 </div>
-                <!-- GDD, Soil Moisture & Plant Available Water -->
+                <!-- Soil Moisture & Plant Available Water -->
                 <div class="env-card">
                     <div class="env-card-title">
                         <div class="icon icon-brown">🌱</div>
-                        GDD, Soil Moisture &amp; Available Water in the Root Zone
+                        Soil Moisture &amp; Available Water in the Root Zone
                     </div>
-                    <div class="env-card-subtitle">How growing degree days (GDD) and soil moisture together determine plant-available water and ecosystem response</div>
+                    <div class="env-card-subtitle">How soil moisture and plant demand determine plant-available water and ecosystem response</div>
 
-                    <p>Two interacting physical drivers control short-term crop water status: <span class="has-tooltip" tabindex="0">GDD<span class="tooltip">Growing Degree Days: accumulated heat used to track crop development rate.</span></span> and soil moisture (expressed as <span class="has-tooltip" tabindex="0">TAW<span class="tooltip">Total Available Water in the root zone — the difference between field capacity and wilting point, expressed as mm of water per soil depth.</span></span> or AWC). When GDD rises rapidly during canopy development, crop water demand (ET<sub>c</sub>) increases; where TAW is low, the same GDD accrual produces faster depletion and earlier onset of water stress.</p>
+                    <p>Two interacting drivers control short-term crop water status: plant water demand (driven by canopy development and atmospheric demand) and soil moisture (expressed as <span class="has-tooltip" tabindex="0">TAW<span class="tooltip">Total Available Water in the root zone — the difference between field capacity and wilting point, expressed as mm of water per soil depth.</span></span>, sometimes called AWC). When plant demand rises during canopy growth, ET<sub>c</sub> increases; where TAW is low, the same demand produces faster depletion and earlier onset of water stress.</p>
 
                     <div class="two-col">
                         <div class="info-block blue">
                             <h4>Mechanistic link</h4>
-                            <p>A growing canopy increases leaf area index and transpirational demand. For a given atmospheric demand (ET<sub>0</sub>), higher GDD translates into higher crop coefficient <em>K<sub>c</sub></em>, which increases ET<sub>c</sub> and accelerates depletion of TAW. Mapping GDD alongside soil TAW maps lets managers prioritise surveillance and irrigation where biological demand will outstrip storage most quickly.</p>
+                            <p>A growing canopy increases leaf area index and transpirational demand. For a given atmospheric demand (ET<sub>0</sub>), higher plant demand translates into higher crop coefficient <em>K<sub>c</sub></em>, which increases ET<sub>c</sub> and accelerates depletion of TAW. Mapping plant demand alongside soil TAW maps helps managers prioritise surveillance and irrigation where biological demand will outstrip storage most quickly.</p>
                         </div>
                         <div class="info-block green">
                             <h4>Spectral signal</h4>
-                            <p>As TAW is depleted and K<sub>s</sub> falls, NDWI and NDRE decline while stress-associated red-edge shifts appear. FAAIR uses these spectral markers, anchored to mechanistic thresholds derived from GDD &amp; soil texture, to reduce false positives where waterlogging or shallow soils could otherwise confuse the classifier.</p>
+                            <p>As TAW is depleted and K<sub>s</sub> falls, NDWI and NDRE decline while stress-associated red-edge shifts appear. FAAIR uses these spectral markers, anchored to mechanistic thresholds derived from soil texture and plant demand, to reduce false positives where waterlogging or shallow soils could otherwise confuse the classifier.</p>
                         </div>
                     </div>
 
                     <div class="image-grid" aria-hidden="false">
-                        <div class="img-card">
-                            <a href="assets/images/gdd.svg" target="_blank"><img src="assets/images/gdd.svg" alt="GDD illustration"></a>
-                            <div class="img-caption">GDD accumulation and crop growth</div>
-                        </div>
                         <div class="img-card">
                             <a href="assets/images/soil-moisture.svg" target="_blank"><img src="assets/images/soil-moisture.svg" alt="Soil moisture illustration"></a>
                             <div class="img-caption">Soil moisture &amp; AWC by texture</div>
